@@ -40,7 +40,7 @@ FileUtils.copy_entry("packBase/", "packBuild/pack")
 puts "Building dark nether pack..."
 ZipDir("packBuild/pack/", "packBuild/0.mcpack") # Dark nether
 puts "Building light nether pack..."
-replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "vec4 ambientOclusion = vec4(uv1.y + isHell* 0.5);", "vec4 ambientOclusion = vec4(uv1.y + isHell* 2.0);")
+replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "resultLighting += vec3(isHell * 0.125);", "resultLighting += vec3(isHell * 0.4);")
 ZipDir("packBuild/pack/", "packBuild/1.mcpack") # Light nether
 puts("Finishing pack build...")
 FileUtils.rm_rf("packBuild/pack")
