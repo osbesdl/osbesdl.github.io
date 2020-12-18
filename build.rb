@@ -37,11 +37,18 @@ createDir("BUILD/packs")
 
 puts "\nCopying base pack... (This takes a while)"
 FileUtils.copy_entry("packBase/", "packBuild/pack")
-puts "Building dark nether pack..."
-ZipDir("packBuild/pack/", "packBuild/0.mcpack") # Dark nether
-puts "Building light nether pack..."
+puts "Building normal dark nether pack..."
+ZipDir("packBuild/pack/", "packBuild/00.mcpack") # Dark nether normal mode
+puts "Building normal light nether pack..."
 replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "resultLighting += vec3(isHell * 0.125);", "resultLighting += vec3(isHell * 0.4);")
-ZipDir("packBuild/pack/", "packBuild/1.mcpack") # Light nether
+ZipDir("packBuild/pack/", "packBuild/01.mcpack") # Light nether normal mode
+puts "Building compatable light nether pack..."
+FileUtils.rm_rf("packBuild/pack/textures/")
+replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "//vec4 diffuse = texture2D(TEXTURE_0, uv0 * 32.0 - vec2(1.0, 0.0));", "vec4 diffuse = texture2D(TEXTURE_0, uv0 * 32.0 - vec2(1.0, 0.0));")
+ZipDir("packBuild/pack/", "packBuild/10.mcpack") # Light nether compatable mode
+puts "Building compatable dark nether pack..."
+replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "resultLighting += vec3(isHell * 0.4);", "resultLighting += vec3(isHell * 0.125);")
+ZipDir("packBuild/pack/", "packBuild/11.mcpack") # Dark nether compatable mode
 puts("Finishing pack build...")
 FileUtils.rm_rf("packBuild/pack")
 FileUtils.copy_entry("packBuild/", "BUILD/packs")
@@ -51,7 +58,7 @@ puts "\nCopying site base"
 FileUtils.copy_entry("siteBase/", "BUILD")
 puts "Building site..."
 FileUtils.copy_entry("resources/base.html", "siteBuild/index.html")
-ids = ['0','1']
+ids = ['00','01','10','11']
 ids.each { |id| makePage(id) }
 puts "Finishing site build..."
 FileUtils.rm("siteBuild/index.html")
