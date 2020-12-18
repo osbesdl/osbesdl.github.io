@@ -1,0 +1,17 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    dir (0.1.2)
+    fileutils (1.4.1)
+    rubyzip (2.3.0)
+
+PLATFORMS
+  x64-mingw32
+
+DEPENDENCIES
+  dir (~> 0.1.2)
+  fileutils (~> 1.4)
+  rubyzip (~> 2.3)
+
+BUNDLED WITH
+   2.1.4
