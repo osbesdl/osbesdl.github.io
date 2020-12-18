@@ -1,0 +1,19 @@
+<style>
+  img {
+    width: 12px;
+    height: 12px;
+  }
+</style>
+
+<script>
+  var id=window.location.href.split('/').slice(-2)[0]
+    switch (id) {
+        case "0":
+          document.write('Bright Nether <a href="../1"><img src="../resources/uncheck.png"</a>')
+          break
+        case "1":
+          document.write('Bright Nether <a href="../0"><img src="../resources/check.png"</a>')
+          break
+      }
+  document.write('<br><a href="../packs/'+id+'.mcpack">download</a>')
+</script>

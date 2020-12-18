@@ -1,3 +1,4 @@
+puts "Initialising..."
 require 'rubygems'
 require 'zip/zip'
 require 'dir'
@@ -25,17 +26,35 @@ def replaceInFile(filename, originalstring, newstring)
   File.open(filename, 'w') { |line| line.puts new_content }
 end
 
-
+def makePage(id)
+  createDir("siteBuild/"+id)
+  FileUtils.copy_entry("siteBuild/index.html", "siteBuild/"+id+"/index.html")
+end
 createDir("packBuild")
+createDir("siteBuild")
 createDir("BUILD")
 createDir("BUILD/packs")
 
+puts "\nCopying base pack... (This takes a while)"
 FileUtils.copy_entry("packBase/", "packBuild/pack")
+puts "Building dark nether pack..."
 ZipDir("./packBuild/pack/", "packBuild/0.mcpack") # Dark nether
-replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "vec4 ambientOclusion = vec4(uv1.y + isHell* 0.5);", "vec4 ambientOclusion = vec4(uv1.y + isHell* 2);")
+puts "Building light nether pack..."
+replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "vec4 ambientOclusion = vec4(uv1.y + isHell* 0.5);", "vec4 ambientOclusion = vec4(uv1.y + isHell* 2.0);")
 ZipDir("./packBuild/pack/", "packBuild/1.mcpack") # Light nether
+puts("Finishing pack build...")
 FileUtils.rm_rf("packBuild/pack")
 FileUtils.copy_entry("packBuild/", "BUILD/packs")
-FileUtils.copy_entry("siteBase/", "BUILD")
-
 FileUtils.rm_rf("packBuild")
+
+puts "\nCopying site base"
+FileUtils.copy_entry("siteBase/", "BUILD")
+puts "Building site..."
+FileUtils.copy_entry("resources/base.html", "siteBuild/index.html")
+ids = ['0','1']
+ids.each { |id| makePage(id) }
+puts "Finishing site build..."
+FileUtils.rm("siteBuild/index.html")
+FileUtils.copy_entry("siteBuild/", "BUILD")
+FileUtils.rm_rf("siteBuild")
+puts "\ndone."
