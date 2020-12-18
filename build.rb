@@ -7,8 +7,8 @@ require 'tempfile'
 
 def ZipDir(directory, zipfile_name)
   Zip::ZipFile.open(zipfile_name, Zip::ZipFile::CREATE) do |zipfile|
-      Dir[File.join(directory, '*')].each do |file|
-        zipfile.add(file.sub(directory, ''), file)
+      Dir[File.join(directory+"/**/*")].each do |file|
+        zipfile.add(file.sub(directory[1..-1], ''), file)
       end
   end
 end
@@ -38,10 +38,10 @@ createDir("BUILD/packs")
 puts "\nCopying base pack... (This takes a while)"
 FileUtils.copy_entry("packBase/", "packBuild/pack")
 puts "Building dark nether pack..."
-ZipDir("./packBuild/pack/", "packBuild/0.mcpack") # Dark nether
+ZipDir("packBuild/pack/", "packBuild/0.mcpack") # Dark nether
 puts "Building light nether pack..."
 replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "vec4 ambientOclusion = vec4(uv1.y + isHell* 0.5);", "vec4 ambientOclusion = vec4(uv1.y + isHell* 2.0);")
-ZipDir("./packBuild/pack/", "packBuild/1.mcpack") # Light nether
+ZipDir("packBuild/pack/", "packBuild/1.mcpack") # Light nether
 puts("Finishing pack build...")
 FileUtils.rm_rf("packBuild/pack")
 FileUtils.copy_entry("packBuild/", "BUILD/packs")
