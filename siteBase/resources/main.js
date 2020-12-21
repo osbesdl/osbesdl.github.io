@@ -1,9 +1,10 @@
 // from the right
 // 1 - dark mode
 // 2 - compatability mode
-var brightnether = "Bright Nether"
-var compatabilitymode = "Compatability Mode (Alpha)"
+var brightnether = "BRIGHT NETHER"
+var compatabilitymode = "COMPATABILITY MODE [ALPHA]"
 var id = window.location.href.split('/').slice(-2)[0]
+document.write('<div class="content">')
   switch (id) {
     case "00":
       document.write(brightnether + ' <a href="../01"><img src="../resources/uncheck.png"></img></a><br>')
@@ -21,5 +22,6 @@ var id = window.location.href.split('/').slice(-2)[0]
       document.write(brightnether + ' <a href="../10"><img src="../resources/check.png"></img></a><br>')
       document.write(compatabilitymode + ' <a href="../01"><img src="../resources/check.png"></img></a><br>')
       break
-  }
-document.write('<br><a href="../packs/'+id+'.mcpack">download</a>')
+}
+document.write('<br><a href="../packs/' + id + '.mcpack">download</a>')
+document.write("</div>")

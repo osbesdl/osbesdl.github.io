@@ -1,4 +1,33 @@
+@font-face {
+  font-family: 'Minecrafter';
+  src: URL('../resources/Minecrafter.Reg.ttf') format('truetype');
+}
 img {
-  width: 12px;
-  height: 12px;
+  width: 36px;
+  height: 36px;
+  filter: invert(1);
+}
+body {
+  background-image: url("../resources/bg.jpg");
+  background-repeat: repeat;
+  font-size: 36px;
+  color: white;
+  font-family: 'Minecrafter';
+  text-align: center; 
+}
+.content {
+  background-image: url("../resources/bg2.jpg");
+  background-repeat: repeat;
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  border: 20px solid black;
+  display: inline-block;  
+  width: 50%;
+  height: 50%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
 }
