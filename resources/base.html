@@ -12,20 +12,20 @@
   var id=window.location.href.split('/').slice(-2)[0]
     switch (id) {
       case "00":
-        document.write('Compatability Mode <a href="../10"><img src="../resources/uncheck.png"</a><br>')
-        document.write('Bright Nether <a href="../01"><img src="../resources/uncheck.png"</a><br>')
+        document.write('Compatability Mode <a href="../10"><img src="../resources/uncheck.png"></img></a><br>')
+        document.write('Bright Nether <a href="../01"><img src="../resources/uncheck.png"></img></a><br>')
         break
       case "01":
-        document.write('Compatability Mode <a href="../11"><img src="../resources/uncheck.png"</a><br>')
-        document.write('Bright Nether <a href="../00"><img src="../resources/check.png"</a><br>')
+        document.write('Compatability Mode <a href="../10"><img src="../resources/uncheck.png"></img></a><br>')
+        document.write('Bright Nether <a href="../00"><img src="../resources/check.png"></img></a><br>')
         break
       case "10":
-        document.write('Compatability Mode <a href="../00"><img src="../resources/uncheck.png"</a><br>')
-        document.write('Bright Nether <a href="../11"><img src="../resources/uncheck.png"</a><br>')
+        document.write('Compatability Mode <a href="../00"><img src="../resources/check.png"></img></a><br>')
+        document.write('Bright Nether <a href="../11"><img src="../resources/uncheck.png"></img></a><br>')
         break
       case "11":
-        document.write('Compatability Mode <a href="../01"><img src="../resources/uncheck.png"</a><br>')
-        document.write('Bright Nether <a href="../10"><img src="../resources/check.png"</a><br>')
+        document.write('Compatability Mode <a href="../01"><img src="../resources/check.png"></img></a><br>')
+        document.write('Bright Nether <a href="../10"><img src="../resources/check.png"></img></a><br>')
         break
       }
   document.write('<br><a href="../packs/'+id+'.mcpack">download</a>')
