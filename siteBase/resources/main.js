@@ -21,5 +21,5 @@ var id = window.location.href.split('/').slice(-2)[0]
       document.write(brightnether + ' <a href="../10"><img src="../resources/check.png"></img></a><br>')
       document.write(compatabilitymode + ' <a href="../01"><img src="../resources/check.png"></img></a><br>')
       break
-    }
+  }
 document.write('<br><a href="../packs/'+id+'.mcpack">download</a>')
