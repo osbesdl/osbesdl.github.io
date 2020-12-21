@@ -2,7 +2,7 @@
   font-family: 'Minecrafter';
   src: URL('../resources/Minecrafter.Reg.ttf') format('truetype');
 }
-img {
+.checkboxes img {
   width: 36px;
   height: 36px;
   filter: invert(1);

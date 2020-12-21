@@ -5,6 +5,10 @@ var brightnether = "BRIGHT NETHER"
 var compatabilitymode = "COMPATABILITY MODE [ALPHA]"
 var id = window.location.href.split('/').slice(-2)[0]
 document.write('<div class="content">')
+document.write('<img src="../resources/logo.png"></img>')
+document.write('<br>')
+document.write('<br>')
+document.write('<div class="checkboxes">')
   switch (id) {
     case "00":
       document.write(brightnether + ' <a href="../01"><img src="../resources/uncheck.png"></img></a><br>')
@@ -23,5 +27,7 @@ document.write('<div class="content">')
       document.write(compatabilitymode + ' <a href="../01"><img src="../resources/check.png"></img></a><br>')
       break
 }
-document.write('<br><a href="../packs/' + id + '.mcpack">download</a>')
+document.write('</div>')
+document.write('<br>')
+document.write('<a href="../packs/' + id + '.mcpack"  style="color: lime">download</a>')
 document.write("</div>")
