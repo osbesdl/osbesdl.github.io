@@ -46,4 +46,8 @@ function info(option) {
 document.write('</div>')
 document.write('<br>')
 document.write('<a href="../packs/' + id + '.mcpack"  style="color: lime">download</a>')
+document.write('<div class="credit">')
+document.write('<a href="https://github.com/OpenSauce04/OSBESdl">download page built by opensauce</a><br>')
+document.write('project initiated by jebbyk')
+document.write('</div>')
 document.write("</div>")
