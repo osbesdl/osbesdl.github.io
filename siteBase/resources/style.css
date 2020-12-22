@@ -7,17 +7,19 @@
   height: 36px;
 }
 body {
-  background-image: url("../resources/bg.jpg");
-  background-repeat: repeat;
+  background-image: url("../resources/bg.png");
+  background-repeat: repeat-x;
+  height: 100vh;
+  background-size: cover;
   font-size: 36px;
   color: white;
   font-family: 'Minecrafter';
   text-align: center;
-  animation: animation 100s linear infinite;
+  animation: animation 40s linear infinite; /*20s per image*/
 }
 @keyframes animation {
    100%{
-    background-position:-3000px 0px;
+    background-position:-1440px 0px; /*-Background image width*/
   }
 }
 .content {
