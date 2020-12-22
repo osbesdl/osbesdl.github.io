@@ -15,13 +15,14 @@ body {
   color: white;
   font-family: 'Minecrafter';
   text-align: center;
-  animation: animation 40s linear infinite; /*20s per image*/
+  animation: animation 4000s linear infinite; /*2000s per image*/
 }
 @keyframes animation {
-   100%{
-    background-position:-1440px 0px; /*-Background image width*/
+  100%{
+    background-position:-144000px 0px; /*-Background image width x 100*/
   }
 }
+/*^I am aware that code is a messy fix but s h u t*/
 .content {
   background-image: url("../resources/bg2.jpg");
   background-repeat: repeat;
