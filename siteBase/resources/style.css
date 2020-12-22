@@ -5,7 +5,6 @@
 .checkboxes img {
   width: 36px;
   height: 36px;
-  filter: invert(1);
 }
 body {
   background-image: url("../resources/bg.jpg");
@@ -30,4 +29,9 @@ body {
   margin: auto;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
+}
+.right {
+  position: absolute;
+  right: 0px;
+  padding-right: 20px;
 }
