@@ -12,9 +12,13 @@ body {
   font-size: 36px;
   color: white;
   font-family: 'Minecrafter';
-  text-align: center; 
-  box-sizing: border-box;
-  -webkit-animation: slide 20s linear infinite;
+  text-align: center;
+  animation: animation 100s linear infinite;
+}
+@keyframes animation {
+   100%{
+    background-position:-3000px 0px;
+  }
 }
 .content {
   background-image: url("../resources/bg2.jpg");
