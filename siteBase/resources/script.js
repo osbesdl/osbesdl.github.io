@@ -50,5 +50,5 @@ function boxclicked(imgid) {
 }
 
 function downloadPack() {
-  window.location.href = './packs/' + window.location.href.slice(-2) + '.mcpack'
+  window.location.href = './packs/OSBES' + window.location.href.slice(-2) + '.mcpack'
 }
