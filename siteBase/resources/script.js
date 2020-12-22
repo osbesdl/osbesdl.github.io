@@ -49,8 +49,6 @@ function boxclicked(imgid) {
   }
 }
 
-function download() {
-  'packs/' + window.location.href.slice(-3) + '.mcpack'
+function downloadPack() {
+  window.location.href = './packs/' + window.location.href.slice(-2) + '.mcpack'
 }
-
-

@@ -38,18 +38,18 @@ createDir("BUILD/packs")
 puts "\nCopying base pack... (This takes a while)"
 FileUtils.copy_entry("packBase/", "packBuild/pack")
 puts "Building normal dark nether pack..."
-ZipDir("packBuild/pack/", "packBuild/#00.mcpack") # Dark nether normal mode
+ZipDir("packBuild/pack/", "packBuild/00.mcpack") # Dark nether normal mode
 puts "Building normal light nether pack..."
 replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "resultLighting += vec3(isHell * 0.125);", "resultLighting += vec3(isHell * 0.4);")
-ZipDir("packBuild/pack/", "packBuild/#01.mcpack") # Light nether normal mode
+ZipDir("packBuild/pack/", "packBuild/01.mcpack") # Light nether normal mode
 puts "Building compatable light nether pack..."
 FileUtils.rm_rf("packBuild/pack/textures/")
 replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "vec4 diffuse = texelFetch(TEXTURE_0, ivec2((uv0 - localDiffuseCoord) * 1024.0), 0);", "vec4 diffuse = texelFetch(TEXTURE_0, ivec2((uv0) * 1024.0), 0);")
 replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "normalMap = texelFetch(TEXTURE_0, ivec2((uv0 - localNormalCoord) * 1024.0), 0);", "")
-ZipDir("packBuild/pack/", "packBuild/#11.mcpack") # Light nether compatable mode
+ZipDir("packBuild/pack/", "packBuild/11.mcpack") # Light nether compatable mode
 puts "Building compatable dark nether pack..."
 replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "resultLighting += vec3(isHell * 0.4);", "resultLighting += vec3(isHell * 0.125);")
-ZipDir("packBuild/pack/", "packBuild/#10.mcpack") # Dark nether compatable mode
+ZipDir("packBuild/pack/", "packBuild/10.mcpack") # Dark nether compatable mode
 puts "Finishing pack build..."
 FileUtils.rm_rf("packBuild/pack")
 FileUtils.copy_entry("packBuild/", "BUILD/packs")
