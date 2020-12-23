@@ -12,7 +12,7 @@ body {
   height: 100vh;
   background-size: cover;
   font-size: 36px;
-  color: white;
+  color: black;
   font-family: 'Minecrafter';
   text-align: center;
   animation: animation 4000s linear infinite; /*2000s per image*/
@@ -30,7 +30,7 @@ body {
   padding-right: 30px;
   padding-bottom: 30px;
   padding-left: 30px;
-  border: 20px solid black;
+  border: 20px solid white;
   display: inline-block;  
   width: 50%;
   height: 75%;
@@ -51,8 +51,8 @@ body {
   padding-left: 20px;
   padding-bottom: 20px;
   font-size: 15px;
-  color: darkslategray;
+  color: gray;
 }
 .credit a {
-  color: darkslategray;
+  color: gray;
 }
