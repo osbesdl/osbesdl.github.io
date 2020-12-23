@@ -2,8 +2,8 @@
 // 1 - dark mode
 // 2 - compatability mode
 
-var brightnether = "BRIGHT NETHER"
-var compatabilitymode = "COMPATABILITY MODE [ALPHA]"
+var brightnether = "Bright Nether"
+var compatabilitymode = "Compatability Mode<span style='font-size: 20'>[Alpha]</span>"
 
 window.history.pushState("", "", '#01')
 
@@ -17,7 +17,7 @@ function info(option) {
       output += "Disables normal and specular maps. This allows the use of other resource packs at the expense of the textures having less depth and no shine.\n\n!!!WARNING!!!\nThis feature is currently incredibly buggy, and many parts of the game don&#39;t look right."
       break
   }
-  output += "'><img src='resources/info.png'></img></span>"
+  output += "'><sup style='color:blue; font-size:20'>?</sup></span>"
   return output
 }
 

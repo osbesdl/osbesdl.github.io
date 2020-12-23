@@ -1,28 +1,24 @@
-@font-face {
-  font-family: 'Minecrafter';
-  src: URL('../resources/Minecrafter.Reg.ttf') format('truetype');
-}
 .checkboxes img {
   width: 36px;
   height: 36px;
+  filter: invert(48%) sepia(0%) saturate(0%) hue-rotate(203deg) brightness(94%) contrast(90%);
+}
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVi2ZhZI2eCN5jzbjEETS9weq8-33mZGCQYbw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 body {
   background-image: url("../resources/bg.png");
-  background-repeat: repeat-x;
-  height: 100vh;
-  background-size: cover;
+  background-repeat: repeat;
   font-size: 36px;
-  color: black;
-  font-family: 'Minecrafter';
+  color: rgb(116, 116, 116);
+  font-family: 'Roboto Condensed', sans-serif;
   text-align: center;
-  animation: animation 4000s linear infinite; /*2000s per image*/
 }
-@keyframes animation {
-  100%{
-    background-position:-144000px 0px; /*-Background image width x 100*/
-  }
-}
-/*^I am aware that code is a messy fix but s h u t*/
 .content {
   background-image: url("../resources/bg2.jpg");
   background-repeat: repeat;
@@ -30,7 +26,6 @@ body {
   padding-right: 30px;
   padding-bottom: 30px;
   padding-left: 30px;
-  border: 20px solid white;
   display: inline-block;  
   width: 50%;
   height: 75%;
@@ -38,6 +33,11 @@ body {
   margin: auto;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
+}
+.gradient {
+  background: -webkit-linear-gradient(rgb(255, 72, 0), rgb(202, 38, 150));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .right {
   position: absolute;
@@ -51,7 +51,7 @@ body {
   padding-left: 20px;
   padding-bottom: 20px;
   font-size: 15px;
-  color: gray;
+  color: grey;
 }
 .credit a {
   color: gray;
