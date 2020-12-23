@@ -1,7 +1,6 @@
 .checkboxes img {
   width: 36px;
   height: 36px;
-  filter: invert(48%) sepia(0%) saturate(0%) hue-rotate(203deg) brightness(94%) contrast(90%);
 }
 @font-face {
   font-family: 'Roboto Condensed';
@@ -15,7 +14,7 @@ body {
   background-image: url("../resources/bg.png");
   background-repeat: repeat;
   font-size: 36px;
-  color: rgb(116, 116, 116);
+  color: rgb(78, 78, 78);
   font-family: 'Roboto Condensed', sans-serif;
   text-align: center;
 }
