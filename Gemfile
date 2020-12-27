@@ -9,3 +9,5 @@ gem "rubyzip", "~> 2.3"
 gem "fileutils", "~> 1.4"
 
 gem "dir", "~> 0.1.2"
+
+gem "zip", "~> 2.0"

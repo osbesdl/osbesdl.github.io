@@ -4,7 +4,7 @@ GEM
     dir (0.1.2)
     fileutils (1.4.1)
     rubyzip (2.3.0)
-    tempfile (0.1.0)
+    zip (2.0.2)
 
 PLATFORMS
   x64-mingw32
@@ -13,7 +13,7 @@ DEPENDENCIES
   dir (~> 0.1.2)
   fileutils (~> 1.4)
   rubyzip (~> 2.3)
-  tempfile (~> 0.1.0)
+  zip (~> 2.0)
 
 BUNDLED WITH
    2.1.4
