@@ -1,19 +1,19 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    archive-zip (0.12.0)
+      io-like (~> 0.3.0)
     dir (0.1.2)
     fileutils (1.4.1)
-    rubyzip (2.3.0)
-    zip (2.0.2)
+    io-like (0.3.1)
 
 PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  archive-zip (~> 0.12.0)
   dir (~> 0.1.2)
   fileutils (~> 1.4)
-  rubyzip (~> 2.3)
-  zip (~> 2.0)
 
 BUNDLED WITH
    2.1.4

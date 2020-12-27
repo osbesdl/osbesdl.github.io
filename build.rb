@@ -1,6 +1,6 @@
 puts "Initialising..."
 require 'rubygems'
-require 'zip/zip'
+require 'archive/zip'
 require 'dir'
 require 'fileutils'
 require 'tempfile'
@@ -38,18 +38,18 @@ createDir("BUILD/packs")
 puts "\nCopying base pack... (This takes a while)"
 FileUtils.copy_entry("packBase/", "packBuild/pack")
 puts "Building normal dark nether pack..."
-ZipDir("packBuild/pack/", "packBuild/OSBES00.mcpack") # Dark nether normal mode
+Archive::Zip.archive("packBuild/OSBES00.mcpack", "packBuild/pack/.") # Dark nether normal mode
 puts "Building normal light nether pack..."
 replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "resultLighting += vec3(isHell * 0.125);", "resultLighting += vec3(isHell * 0.4);")
-ZipDir("packBuild/pack/", "packBuild/OSBES01.mcpack") # Light nether normal mode
+Archive::Zip.archive("packBuild/OSBES01.mcpack", "packBuild/pack/.") # Light nether normal mode
 puts "Building compatable light nether pack..."
 FileUtils.rm_rf("packBuild/pack/textures/")
 replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "vec4 diffuse = texelFetch(TEXTURE_0, ivec2((uv0 - localDiffuseCoord) * 1024.0), 0);", "vec4 diffuse = texelFetch(TEXTURE_0, ivec2((uv0) * 1024.0), 0);")
 replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "normalMap = texelFetch(TEXTURE_0, ivec2((uv0 - localNormalCoord) * 1024.0), 0);", "")
-ZipDir("packBuild/pack/", "packBuild/OSBES11.mcpack") # Light nether compatable mode
+Archive::Zip.archive("packBuild/OSBES11.mcpack", "packBuild/pack/.") # Light nether compatable mode
 puts "Building compatable dark nether pack..."
 replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "resultLighting += vec3(isHell * 0.4);", "resultLighting += vec3(isHell * 0.125);")
-ZipDir("packBuild/pack/", "packBuild/OSBES10.mcpack") # Dark nether compatable mode
+Archive::Zip.archive("packBuild/OSBES10.mcpack", "packBuild/pack/.") # Dark nether compatable mode
 puts "Finishing pack build..."
 FileUtils.rm_rf("packBuild/pack")
 FileUtils.copy_entry("packBuild/", "BUILD/packs")
