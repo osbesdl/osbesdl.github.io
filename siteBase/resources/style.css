@@ -48,6 +48,10 @@ body {
   right: 0;
   left: 0;
   position: absolute;
+  padding-bottom: 20px;
+}
+.title img {
+  height: 180px;
 }
 .download {
   background: -webkit-linear-gradient(rgb(255, 72, 0), rgb(202, 38, 150));
