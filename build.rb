@@ -31,7 +31,6 @@ def makePage(id)
   FileUtils.copy_entry("siteBuild/index.html", "siteBuild/"+id+"/index.html")
 end
 createDir("packBuild")
-createDir("siteBuild")
 createDir("BUILD")
 createDir("BUILD/packs")
 
