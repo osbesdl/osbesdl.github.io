@@ -5,7 +5,10 @@ GEM
       io-like (~> 0.3.0)
     dir (0.1.2)
     fileutils (1.4.1)
+    git (1.8.1)
+      rchardet (~> 1.8)
     io-like (0.3.1)
+    rchardet (1.8.0)
 
 PLATFORMS
   x64-mingw32
@@ -14,6 +17,7 @@ DEPENDENCIES
   archive-zip (~> 0.12.0)
   dir (~> 0.1.2)
   fileutils (~> 1.4)
+  git (~> 1.8)
 
 BUNDLED WITH
-   2.1.4
+   2.2.3

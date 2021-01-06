@@ -4,6 +4,7 @@ require 'archive/zip'
 require 'dir'
 require 'fileutils'
 require 'tempfile'
+require 'git'
 
 def ZipDir(directory, zipfile_name)
   Zip::ZipFile.open(zipfile_name, Zip::ZipFile::CREATE) do |zipfile|
@@ -36,25 +37,54 @@ createDir("BUILD/packs")
 
 puts "\nCopying pack base... (This takes a while)"
 FileUtils.copy_entry("packBase/", "packBuild/pack")
+
 puts "Cleaning up pack base..."
 FileUtils.rm("packBuild/pack/.git")
 FileUtils.rm("packBuild/pack/.gitignore ")
 FileUtils.rm("packBuild/pack/LICENSE")
 FileUtils.rm("packBuild/pack/README.md")
+
 puts "Building normal dark nether pack..."
-Archive::Zip.archive("packBuild/OSBES00.mcpack", "packBuild/pack/.") # Dark nether normal mode
+Archive::Zip.archive("packBuild/OSBES000.mcpack", "packBuild/pack/.") # Dark nether normal mode
+
 puts "Building normal light nether pack..."
 replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "resultLighting += vec3(isHell * 0.125);", "resultLighting += vec3(isHell * 0.4);")
-Archive::Zip.archive("packBuild/OSBES01.mcpack", "packBuild/pack/.") # Light nether normal mode
+Archive::Zip.archive("packBuild/OSBES001.mcpack", "packBuild/pack/.") # Light nether normal mode
+
 puts "Building compatable light nether pack..."
 FileUtils.rm_rf("packBuild/pack/textures/")
 replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "vec4 diffuse = texelFetch(TEXTURE_0, ivec2((uv0 - localDiffuseCoord) * 1024.0), 0);", "vec4 diffuse = texelFetch(TEXTURE_0, ivec2((uv0) * 1024.0), 0);")
 replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "normalMap = texelFetch(TEXTURE_0, ivec2((uv0 - localNormalCoord) * 1024.0), 0);", "")
-Archive::Zip.archive("packBuild/OSBES11.mcpack", "packBuild/pack/.") # Light nether compatable mode
+Archive::Zip.archive("packBuild/OSBES011.mcpack", "packBuild/pack/.") # Light nether compatable mode
+
 puts "Building compatable dark nether pack..."
 replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "resultLighting += vec3(isHell * 0.4);", "resultLighting += vec3(isHell * 0.125);")
-Archive::Zip.archive("packBuild/OSBES10.mcpack", "packBuild/pack/.") # Dark nether compatable mode
-puts "Finishing pack build..."
+Archive::Zip.archive("packBuild/OSBES010.mcpack", "packBuild/pack/.") # Dark nether compatable mode
+
+puts "Cleaning up..."
+FileUtils.rm_rf("packBuild/pack")
+
+puts "\nCloning experimental pack... (This takes a while)"
+Git.clone('https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader', 'packBuild/pack')
+
+puts "Building normal dark nether experimental pack..."
+Archive::Zip.archive("packBuild/OSBES100.mcpack", "packBuild/pack/.") # Dark nether normal mode
+
+puts "Building normal light nether experimental pack..."
+replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "resultLighting += vec3(isHell * 0.125);", "resultLighting += vec3(isHell * 0.4);")
+Archive::Zip.archive("packBuild/OSBES101.mcpack", "packBuild/pack/.") # Light nether normal mode
+
+puts "Building compatable light nether experimental pack..."
+FileUtils.rm_rf("packBuild/pack/textures/")
+replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "vec4 diffuse = texelFetch(TEXTURE_0, ivec2((uv0 - localDiffuseCoord) * 1024.0), 0);", "vec4 diffuse = texelFetch(TEXTURE_0, ivec2((uv0) * 1024.0), 0);")
+replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "normalMap = texelFetch(TEXTURE_0, ivec2((uv0 - localNormalCoord) * 1024.0), 0);", "")
+Archive::Zip.archive("packBuild/OSBES111.mcpack", "packBuild/pack/.") # Light nether compatable mode
+
+puts "Building compatable dark nether experimental pack..."
+replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "resultLighting += vec3(isHell * 0.4);", "resultLighting += vec3(isHell * 0.125);")
+Archive::Zip.archive("packBuild/OSBES110.mcpack", "packBuild/pack/.") # Dark nether compatable mode
+
+puts "Cleaning up..."
 FileUtils.rm_rf("packBuild/pack")
 FileUtils.copy_entry("packBuild/", "BUILD/packs")
 FileUtils.rm_rf("packBuild")

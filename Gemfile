@@ -10,3 +10,5 @@ gem "fileutils", "~> 1.4"
 gem "dir", "~> 0.1.2"
 
 gem "archive-zip", "~> 0.12.0"
+
+gem "git", "~> 1.8"

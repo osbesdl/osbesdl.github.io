@@ -4,8 +4,8 @@
 
 var brightnether = "Bright Nether"
 var compatabilitymode = "Compatability Mode<span style='font-size: 20'>[Alpha]</span>"
-
-window.history.pushState("", "", '#01')
+var experimental = "Experimental"
+window.history.pushState("", "", '#001')
 
 function info(option) {
   output = "<span title='"
@@ -15,6 +15,9 @@ function info(option) {
       break
     case "compatabilitymode":
       output += "Disables normal and specular maps. This allows the use of other resource packs at the expense of the textures having less depth and no shine.\n\n!!!WARNING!!!\nThis feature is currently incredibly buggy, and many parts of the game don&#39;t look right."
+      break
+    case "experimental":
+      output += "Enables experimental features. Some parts of the game may not work as intended or expected.\n\nOnly enable if you know what you are doing"
       break
   }
   output += "'><sup style='color:blue; font-size:20; cursor: help;'>?</sup></span>"
@@ -30,25 +33,32 @@ function boxclicked(imgid) {
       document.getElementById(imgid).src = "resources/uncheck.png"
       break
   }
-  pageid = window.location.href.slice(-3)
+  pageid = window.location.href.slice(-4)
   switch (imgid) {
     case "bn":
-      if (pageid.substring(2,3) == 1) {
-        window.history.pushState("", "", '#' + pageid.substring(1,2) + '0')
+      if (pageid.substring(3,4) == 1) {
+        window.history.pushState("", "", '#' + pageid.substring(1,2) + pageid.substring(2,3) + '0')
       } else {
-        window.history.pushState("", "", '#' + pageid.substring(1,2) + '1')
+        window.history.pushState("", "", '#' + pageid.substring(1,2) + pageid.substring(2,3) + '1')
       }
       break
     case "cm":
-      if (pageid.substring(1,2) == 1) {
-        window.history.pushState("", "", '#' + '0' + pageid.substring(2,3))
+      if (pageid.substring(2,3) == 1) {
+        window.history.pushState("", "", '#' + pageid.substring(1,2) + '0' + pageid.substring(3,4))
       } else {
-        window.history.pushState("", "", '#' + '1' + pageid.substring(2,3))
+        window.history.pushState("", "", '#' + pageid.substring(1,2) + '1' + pageid.substring(3,4))
       }
       break
+      case "ex":
+        if (pageid.substring(1,2) == 1) {
+          window.history.pushState("", "", '#' + '0' + pageid.substring(2,3) + pageid.substring(3,4))
+        } else {
+          window.history.pushState("", "", '#' + '1' + pageid.substring(2,3) + pageid.substring(3,4))
+        }
+        break
   }
 }
 
 function downloadPack() {
-  window.location.href = './packs/OSBES' + window.location.href.slice(-2) + '.mcpack'
+  window.location.href = './packs/OSBES' + window.location.href.slice(-3) + '.mcpack'
 }
