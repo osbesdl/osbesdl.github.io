@@ -34,8 +34,13 @@ createDir("packBuild")
 createDir("BUILD")
 createDir("BUILD/packs")
 
-puts "\nCopying base pack... (This takes a while)"
+puts "\nCopying pack base... (This takes a while)"
 FileUtils.copy_entry("packBase/", "packBuild/pack")
+puts "Cleaning up pack base..."
+FileUtils.rm("packBuild/pack/.git")
+FileUtils.rm("packBuild/pack/.gitignore ")
+FileUtils.rm("packBuild/pack/LICENSE")
+FileUtils.rm("packBuild/pack/README.md")
 puts "Building normal dark nether pack..."
 Archive::Zip.archive("packBuild/OSBES00.mcpack", "packBuild/pack/.") # Dark nether normal mode
 puts "Building normal light nether pack..."

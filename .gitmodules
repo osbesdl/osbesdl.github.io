@@ -1,0 +1,3 @@
+[submodule "packBase"]
+	path = packBase
+	url = https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader
