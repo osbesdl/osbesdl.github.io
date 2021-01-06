@@ -111,3 +111,9 @@ body {
 #pop_head_content {
   font-family: 'Roboto Condensed', sans-serif;
 }
+.egg {
+  cursor: url('egg.png'), auto;	
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+}
