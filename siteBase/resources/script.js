@@ -5,6 +5,10 @@
 var brightnether = "Bright Nether"
 var compatabilitymode = "Compatability Mode<span style='font-size: 20'>[Alpha]</span>"
 var experimental = "Experimental"
+
+var compatabilityprompt=true
+var experimentalprompt=true
+
 window.history.pushState("", "", '#001')
 
 function info(option) {
@@ -43,14 +47,24 @@ function boxclicked(imgid) {
       }
       break
     case "cm":
-      if (pageid.substring(2,3) == 1) {
+      if(compatabilityprompt) {
+        alert("This feature is not finished.\nFor now, only use this for development purposes.\n")
+        compatabilityprompt=false
+        document.getElementById(imgid).src = "resources/uncheck.png"
+      }
+      else if (pageid.substring(2,3) == 1) {
         window.history.pushState("", "", '#' + pageid.substring(1,2) + '0' + pageid.substring(3,4))
       } else {
         window.history.pushState("", "", '#' + pageid.substring(1,2) + '1' + pageid.substring(3,4))
       }
       break
       case "ex":
-        if (pageid.substring(1,2) == 1) {
+        if(experimentalprompt) {
+          alert("This will enable features that may or may not be finshed.\nParts of the game may behave in unexpected ways.\n")
+          experimentalprompt=false
+          document.getElementById(imgid).src = "resources/uncheck.png"
+        }
+         else if (pageid.substring(1,2) == 1) {
           window.history.pushState("", "", '#' + '0' + pageid.substring(2,3) + pageid.substring(3,4))
         } else {
           window.history.pushState("", "", '#' + '1' + pageid.substring(2,3) + pageid.substring(3,4))
