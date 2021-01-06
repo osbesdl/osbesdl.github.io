@@ -64,7 +64,7 @@ body {
 }
 .downloadwrapper {
   background:rgb(85, 85, 85);
-  margin-top: 200px;
+  margin-top: 12%;
   padding-top: 20;
   padding-bottom: 20;
 }
@@ -88,7 +88,7 @@ body {
   padding-top: 1%;
   padding-bottom: 1%;
   width: 59%;
-  height: 90px;
+  height: auto;
   left: 0;
   right: 0;
 }
