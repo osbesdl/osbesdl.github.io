@@ -48,7 +48,7 @@ function boxclicked(imgid) {
       break
     case "cm":
       if(compatabilityprompt) {
-        alert("This feature is not finished.\nFor now, only use this for development purposes.\n")
+        Qual.infod('Warning', 'This feature is not finished. For now, only use this for development purposes.')
         compatabilityprompt=false
         document.getElementById(imgid).src = "resources/uncheck.png"
       }
@@ -60,7 +60,7 @@ function boxclicked(imgid) {
       break
       case "ex":
         if(experimentalprompt) {
-          alert("This will enable features that may or may not be finshed.\nParts of the game may behave in unexpected ways.\n")
+          Qual.infod('Warning', 'This will enable features that may or may not be finshed. Parts of the game may behave in unexpected ways.')
           experimentalprompt=false
           document.getElementById(imgid).src = "resources/uncheck.png"
         }

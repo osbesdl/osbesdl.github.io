@@ -105,3 +105,9 @@ body {
 .credit a {
   color: white;
 }
+#pop_heading {
+  font-family: 'Roboto', sans-serif;
+}
+#pop_head_content {
+  font-family: 'Roboto Condensed', sans-serif;
+}
