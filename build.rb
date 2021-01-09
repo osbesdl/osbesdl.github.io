@@ -31,6 +31,16 @@ def makePage(id)
   createDir("siteBuild/"+id)
   FileUtils.copy_entry("siteBuild/index.html", "siteBuild/"+id+"/index.html")
 end
+
+puts "Checking for pack base..."
+if !File.file?("packBase/LICENSE")
+  puts "\nThe pack base is missing! To fix this, run the following command and try again:\ngit submodule update --init --recursive\n\n"
+  puts "Press enter to exit..."
+  gets
+  exit
+end
+
+puts "Creating directories..."
 createDir("packBuild")
 createDir("BUILD")
 createDir("BUILD/packs")
