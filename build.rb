@@ -54,6 +54,11 @@ FileUtils.rm("packBuild/pack/.gitignore ")
 FileUtils.rm("packBuild/pack/LICENSE")
 FileUtils.rm("packBuild/pack/README.md")
 
+# from the right
+# 1 - dark mode
+# 2 - compatability mode
+# 3 - experimental features
+
 puts "Building normal dark nether pack..."
 Archive::Zip.archive("packBuild/OSBES000.mcpack", "packBuild/pack/.") # Dark nether normal mode
 

@@ -1,6 +1,7 @@
 // from the right
 // 1 - dark mode
 // 2 - compatability mode
+// 3 - experimental features
 
 var brightnether = "Bright Nether"
 var compatabilitymode = "Compatability Mode<span style='font-size: 20'>[Alpha]</span>"
