@@ -29,10 +29,9 @@ body {
   text-align: center;
 }
 .content {
-  background:rgb(70, 70, 70);
   padding-bottom: 3vh;
   display: inline-block;  
-  width: 100%;
+  width: 100vw;
   height: 50%;
   overflow: auto;
   margin: auto;
@@ -43,7 +42,6 @@ body {
   top: 0;
 }
 .title {
-  background: rgb(50, 50, 50);
   top: 0;
   right: 0;
   left: 0;
@@ -63,13 +61,11 @@ body {
   width: 100%;
 }
 .downloadwrapper {
-  background:rgb(85, 85, 85);
   margin-top: 22vh;
   padding-top: 2vh;
   padding-bottom: 2vh;
 }
 .links {
-  background:rgb(70, 70, 70);
   font-size: 2vh;
   text-align: right;
   position: absolute;
@@ -81,17 +77,23 @@ body {
   padding-bottom: 1.6vh;
 }
 .options {
-  background:rgb(85, 85, 85);
   position: absolute;
   text-align: left;
   padding-left: 41vw;
   padding-top: 1vh;
   padding-bottom: 1vh;
-  width: 59%;
+  width: 59vw;
   height: auto;
   left: 0;
   right: 0;
-  font-size: 3.7vh;
+  font-size: 3.3vh;
+}
+.background {
+  background:rgb(85, 85, 85);
+  width: 20vw;
+  margin-left: 40vw;
+  height: 100vw;
+  position: absolute;
 }
 .credit {
   position: absolute;
