@@ -1,3 +1,6 @@
+* {
+  overflow: hidden; /* Hide scrollbars */
+}
 .checkboxes img {
   width: 3.7vh;
   height: 3.7vh;
@@ -33,7 +36,7 @@ body {
   padding-bottom: 3vh;
   display: inline-block;  
   width: 100vw;
-  height: 50%;
+  height: 100vh;
   overflow: auto;
   margin: auto;
   position: absolute;
@@ -49,7 +52,7 @@ body {
   position: absolute;
   padding-bottom: 2vh;
   background-image: url("bg.png");
-  background-size: 105vw;
+  background-size: 100vw;
   height: 100vh;
   background-repeat: no-repeat;
 }
@@ -64,11 +67,7 @@ body {
   font-size: 4vh;
   font-family: 'Roboto', sans-serif;
   width: 100%;
-}
-.downloadwrapper {
-  margin-top: 22vh;
-  padding-top: 2vh;
-  padding-bottom: 2vh;
+  margin-top:70vh
 }
 .links {
   font-size: 2vh;
@@ -88,6 +87,7 @@ body {
   padding-top: 1vh;
   padding-bottom: 1vh;
   width: 59vw;
+  margin-top: 35vh;
   height: auto;
   left: 0;
   right: 0;
@@ -95,9 +95,9 @@ body {
 }
 .background {
   background: rgb(48, 48, 48);
-  width: 20vw;
-  margin-left: 40vw;
-  height: 100vw;
+  width: 30vw;
+  margin-left: 35vw;
+  height: 100vh;
   position: absolute;
 }
 .credit {
