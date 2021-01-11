@@ -60,7 +60,7 @@ body {
   height: 18vh;
 }
 .download {
-  background: -webkit-linear-gradient(rgb(255, 72, 0), rgb(202, 38, 150));
+  background: -webkit-linear-gradient(rgb(255, 72, 0),rgb(193, 23, 184));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   cursor: pointer;
