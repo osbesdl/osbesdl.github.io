@@ -32,13 +32,8 @@ def makePage(id)
   FileUtils.copy_entry("siteBuild/index.html", "siteBuild/"+id+"/index.html")
 end
 
-puts "Checking for pack base..."
-if !File.file?("packBase/LICENSE")
-  puts "\nThe pack base is missing! To fix this, run the following command and try again:\ngit submodule update --init --recursive\n\n"
-  puts "Press enter to exit..."
-  gets
-  exit
-end
+puts "Checking for pack base update..."
+system("git submodule update --init --recursive")
 
 puts "Creating directories..."
 createDir("packBuild")
@@ -50,7 +45,11 @@ FileUtils.copy_entry("packBase/", "packBuild/pack")
 
 puts "Cleaning up pack base..."
 FileUtils.rm("packBuild/pack/.git")
-FileUtils.rm("packBuild/pack/.gitignore ")
+begin
+  FileUtils.rm("packBuild/pack/.gitignore ")
+rescue
+  0
+end
 FileUtils.rm("packBuild/pack/LICENSE")
 FileUtils.rm("packBuild/pack/README.md")
 
