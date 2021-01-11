@@ -34,7 +34,6 @@ end
 
 puts "Checking for pack base update..."
 system("git submodule update --init --recursive")
-puts ARGV[0]
 if ARGV[0]!="--no-pack"
   puts "Creating directories..."
   createDir("packBuild")
