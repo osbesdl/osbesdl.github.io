@@ -19,7 +19,8 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 body {
-  background: rgb(50, 50, 50);
+  background: rgb(40, 40, 40);
+  background-image: image("bg.png");
   background-repeat: repeat;
   background-size: cover;
   font-size: 36px;
@@ -47,6 +48,10 @@ body {
   left: 0;
   position: absolute;
   padding-bottom: 2vh;
+  background-image: url("bg.png");
+  background-size: 105vw;
+  height: 100vh;
+  background-repeat: no-repeat;
 }
 .title img {
   height: 18vh;
@@ -89,7 +94,7 @@ body {
   font-size: 3.3vh;
 }
 .background {
-  background: rgb(60, 60, 60);
+  background: rgb(48, 48, 48);
   width: 20vw;
   margin-left: 40vw;
   height: 100vw;
