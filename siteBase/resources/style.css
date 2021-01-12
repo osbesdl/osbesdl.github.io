@@ -74,23 +74,23 @@ body {
   position: absolute;
   text-align: left;
   margin-left: 41vw;
-  padding-left: 5vw;
-  width: 15vw;
+  padding-left: 1vw;
+  width: 100%;
   height: auto;
   left: 0;
   right: 0;
-  font-size: 3.3vh;
+  font-size: 1.6vw;
   
 }
 .box {
   background: rgb(55, 55, 55);
-  padding-top: 6vh;
+  padding-top: 4vh;
   padding-bottom: 6vh;
-  padding-left: 3vw;
-  padding-right: 3vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
   border-radius: 60px;
-  margin-left: 41vw;
-  width: 15vw;
+  margin-left: 39vw;
+  width: 20vw;
   margin-top: 35vh;
 }
 /* OLD DOWNLOAD
