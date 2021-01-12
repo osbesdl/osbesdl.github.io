@@ -4,7 +4,7 @@
 // 3 - experimental features
 
 var brightnether = "Bright Nether"
-var compatabilitymode = "Compatability Mode<span style='font-size: 20'>[Alpha]</span>"
+var compatabilitymode = "Compatability Mode<span class='alphatag'> [Alpha]</span>"
 var experimental = "Experimental"
 
 var compatabilityprompt=true

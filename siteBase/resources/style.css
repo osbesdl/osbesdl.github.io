@@ -91,6 +91,9 @@ body {
   right: 0;
   font-size: 1.6vw;
 }
+.alphatag {
+  font-size: 1vw
+}
 .info {
   color:rgb(192, 192, 192);
   font-size:20;
