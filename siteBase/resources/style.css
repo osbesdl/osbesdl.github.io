@@ -110,7 +110,7 @@ body {
   cursor: pointer;
 }
 .download img {
-  width:10vh
+  width: 12vw;
 }
 .credit {
   position: absolute;
