@@ -25,7 +25,7 @@ function info(option) {
       output += "Enables experimental features. Some parts of the game may not work as intended or expected.\n\nOnly enable if you know what you are doing"
       break
   }
-  output += "'><sup style='color:blue; font-size:20; cursor: help;'>?</sup></span>"
+  output += "'><sup class='info'>i</sup></span>"
   return output
 }
 
