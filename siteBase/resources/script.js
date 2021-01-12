@@ -25,10 +25,23 @@ function info(option) {
       output += "Enables experimental features. Some parts of the game may not work as intended or expected.\n\nOnly enable if you know what you are doing"
       break
   }
-  output += "'><sup class='info'>i</sup></span>"
+  output += "'><sup class='info' onclick='infoclick(\""+option+"\")'>i</sup></span>"
   return output
 }
-
+function infoclick(option) {
+  switch (option) {
+    case "brightnether":
+      alert("Bright Nether:\n\nBrightens the nether")
+      break
+    case "compatabilitymode":
+      alert("Compatability Mode:\n\nDisables normal and specular maps. This allows the use of other resource packs at the expense of the textures having less depth and no shine.\n\n!!!WARNING!!!\nThis feature is currently incredibly buggy, and many parts of the game don't look right.")
+      break
+    case "experimental":
+      alert("Experimental:\n\nEnables experimental features. Some parts of the game may not work as intended or expected.\n\nOnly enable if you know what you are doing")
+      break
+  }
+  return output
+}
 function boxclicked(imgid) {
   switch (document.getElementById(imgid).src.replace(/(^\w+:|^)\/\//, '')) {
     case (parent.location.host + "/resources/uncheck.png"):
