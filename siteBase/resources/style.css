@@ -80,7 +80,6 @@ body {
   left: 0;
   right: 0;
   font-size: 1.6vw;
-  
 }
 .box {
   background: rgb(55, 55, 55);
@@ -89,7 +88,7 @@ body {
   padding-left: 2vw;
   padding-right: 2vw;
   border-radius: 60px;
-  margin-left: 39vw;
+  margin-left: 38vw;
   width: 20vw;
   margin-top: 35vh;
 }
