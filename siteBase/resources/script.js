@@ -10,7 +10,7 @@ var experimental = "Experimental"
 var compatabilityprompt=true
 var experimentalprompt=true
 
-window.history.pushState("", "", '#001')
+window.history.pushState("", "", '#r01')
 
 function info(option) {
   output = "<span title='"
@@ -53,14 +53,14 @@ function boxclicked(imgid) {
   }
   pageid = window.location.href.slice(-4)
   switch (imgid) {
-    case "bn":
+    case "bn": // Bright Nether
       if (pageid.substring(3,4) == 1) {
         window.history.pushState("", "", '#' + pageid.substring(1,2) + pageid.substring(2,3) + '0')
       } else {
         window.history.pushState("", "", '#' + pageid.substring(1,2) + pageid.substring(2,3) + '1')
       }
       break
-    case "cm":
+    case "cm": // Compatability Mode
       if(compatabilityprompt) {
         Qual.infod('Warning', 'This feature is not finished. For now, only use this for development purposes.')
         compatabilityprompt=false
@@ -72,16 +72,16 @@ function boxclicked(imgid) {
         window.history.pushState("", "", '#' + pageid.substring(1,2) + '1' + pageid.substring(3,4))
       }
       break
-      case "ex":
+      case "ex": // Experimental Features
         if(experimentalprompt) {
           Qual.infod('Warning', 'This will enable features that may or may not be finshed. Parts of the game may behave in unexpected ways.')
           experimentalprompt=false
           document.getElementById(imgid).src = "resources/uncheck.png"
         }
-         else if (pageid.substring(1,2) == 1) {
-          window.history.pushState("", "", '#' + '0' + pageid.substring(2,3) + pageid.substring(3,4))
+         else if (pageid.substring(1,2) == 'e') {
+          window.history.pushState("", "", '#' + 'r' + pageid.substring(2,3) + pageid.substring(3,4))
         } else {
-          window.history.pushState("", "", '#' + '1' + pageid.substring(2,3) + pageid.substring(3,4))
+          window.history.pushState("", "", '#' + 'e' + pageid.substring(2,3) + pageid.substring(3,4))
         }
         break
   }

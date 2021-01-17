@@ -57,46 +57,38 @@ if ARGV[0]!="--no-pack"
   # 1 - dark mode
   # 2 - compatability mode
   # 3 - experimental features
-  
+
+  $exportMode='r' # Release mode
   puts "Building normal dark nether pack..."
-  Archive::Zip.archive("packBuild/OSBES000.mcpack", "packBuild/pack/.") # Dark nether normal mode
+  load("buildScripts/00.rb")
   
   puts "Building normal light nether pack..."
-  replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "resultLighting += vec3(isHell * 0.125);", "resultLighting += vec3(isHell * 0.4);")
-  Archive::Zip.archive("packBuild/OSBES001.mcpack", "packBuild/pack/.") # Light nether normal mode
+  load("buildScripts/01.rb")
   
   puts "Building compatable light nether pack..."
-  FileUtils.rm_rf("packBuild/pack/textures/")
-  replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "vec4 diffuse = texelFetch(TEXTURE_0, ivec2((uv0 - localDiffuseCoord) * 1024.0), 0);", "vec4 diffuse = texelFetch(TEXTURE_0, ivec2((uv0) * 1024.0), 0);")
-  replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "normalMap = texelFetch(TEXTURE_0, ivec2((uv0 - localNormalCoord) * 1024.0), 0);", "")
-  Archive::Zip.archive("packBuild/OSBES011.mcpack", "packBuild/pack/.") # Light nether compatable mode
-  
+  load("buildScripts/11.rb")
+
   puts "Building compatable dark nether pack..."
-  replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "resultLighting += vec3(isHell * 0.4);", "resultLighting += vec3(isHell * 0.125);")
-  Archive::Zip.archive("packBuild/OSBES010.mcpack", "packBuild/pack/.") # Dark nether compatable mode
+  load("buildScripts/10.rb")
   
   puts "Cleaning up..."
   FileUtils.rm_rf("packBuild/pack")
   
   puts "\nCloning experimental pack... (This takes a while)"
   Git.clone('https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader', 'packBuild/pack')
-  
+
+  $exportMode='e' # Experimental mode
   puts "Building normal dark nether experimental pack..."
-  Archive::Zip.archive("packBuild/OSBES100.mcpack", "packBuild/pack/.") # Dark nether normal mode
+  load("buildScripts/00.rb")
   
   puts "Building normal light nether experimental pack..."
-  replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "resultLighting += vec3(isHell * 0.125);", "resultLighting += vec3(isHell * 0.4);")
-  Archive::Zip.archive("packBuild/OSBES101.mcpack", "packBuild/pack/.") # Light nether normal mode
+  load("buildScripts/01.rb")
   
   puts "Building compatable light nether experimental pack..."
-  FileUtils.rm_rf("packBuild/pack/textures/")
-  replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "vec4 diffuse = texelFetch(TEXTURE_0, ivec2((uv0 - localDiffuseCoord) * 1024.0), 0);", "vec4 diffuse = texelFetch(TEXTURE_0, ivec2((uv0) * 1024.0), 0);")
-  replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "normalMap = texelFetch(TEXTURE_0, ivec2((uv0 - localNormalCoord) * 1024.0), 0);", "")
-  Archive::Zip.archive("packBuild/OSBES111.mcpack", "packBuild/pack/.") # Light nether compatable mode
+  load("buildScripts/11.rb")
   
   puts "Building compatable dark nether experimental pack..."
-  replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "resultLighting += vec3(isHell * 0.4);", "resultLighting += vec3(isHell * 0.125);")
-  Archive::Zip.archive("packBuild/OSBES110.mcpack", "packBuild/pack/.") # Dark nether compatable mode
+  load("buildScripts/10.rb")
   
   puts "Cleaning up..."
   FileUtils.rm_rf("packBuild/pack")
