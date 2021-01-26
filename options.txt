@@ -1,0 +1,2 @@
+BrightNether=0
+CompatabilityMode=0
