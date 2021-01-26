@@ -60,13 +60,12 @@ if ARGV[0]!="--no-pack"
   # 2 - compatability mode
   # 3 - experimental features
 =end
-  require 'modules/resetOptions.rb'
-  require 'modules/buildPack.rb'
-  require 'modules/optionDefinitions.rb'
+  require './modules/resetOptions.rb'
+  require './modules/buildPack.rb'
+  require './modules/optionDefinitions.rb'
 
   $exportMode='r' # Release mode
   $options="./options.txt"
-  load("modules/buildPacks.rb")
   puts "Building normal dark nether pack..."
   buildPack(00)
   
