@@ -1,2 +1,0 @@
-replaceInFile('./packBuild/pack/shaders/glsl/renderchunk.fragment', "resultLighting += vec3(isHell * 0.4);", "resultLighting += vec3(isHell * 0.125);")
-Archive::Zip.archive("packBuild/OSBES"+$exportMode+"10.mcpack", "packBuild/pack/.") # Dark nether compatable mode

@@ -1,1 +1,0 @@
-Archive::Zip.archive("packBuild/OSBES"+$exportMode+"00.mcpack", "packBuild/pack/.") # Dark nether normal mode
