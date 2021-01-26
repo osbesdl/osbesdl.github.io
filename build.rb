@@ -18,7 +18,7 @@ def createDir(dir)
   FileUtils.rm_rf Dir.glob("#{dir}/*")
 end
 
-def replaceInFile(filename, originalstring, newstring)
+def setOption(option)
   # save the content of the file
   file = File.read(filename)
   # replace (globally) the search string with the new string
@@ -26,6 +26,8 @@ def replaceInFile(filename, originalstring, newstring)
   # open the file again and write the new content to it
   File.open(filename, 'w') { |line| line.puts new_content }
 end
+
+
 =begin
 def makePage(id)
   createDir("siteBuild/"+id)
@@ -58,18 +60,24 @@ if ARGV[0]!="--no-pack"
   # 2 - compatability mode
   # 3 - experimental features
 =end
+  require 'modules/resetOptions.rb'
+  require 'modules/buildPack.rb'
+
   $exportMode='r' # Release mode
+  $options="./options.txt"
+  load("modules/buildPacks.rb")
   puts "Building normal dark nether pack..."
-  load("buildScripts/00.rb")
+  buildPack(00)
   
   puts "Building normal light nether pack..."
-  load("buildScripts/01.rb")
-  
-  puts "Building compatable light nether pack..."
-  load("buildScripts/11.rb")
+  buildPack(01)
 
   puts "Building compatable dark nether pack..."
-  load("buildScripts/10.rb")
+  buildPack(10)
+
+  puts "Building compatable light nether pack..."
+  buildPack(11)
+  $exportMode='e' # Experimental mode
 =begin
   puts "Cleaning up..."
   FileUtils.rm_rf("packBuild/pack")
@@ -77,19 +85,6 @@ if ARGV[0]!="--no-pack"
   puts "\nCloning experimental pack... (This takes a while)"
   Git.clone('https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader', 'packBuild/pack')
 
-  $exportMode='e' # Experimental mode
-  puts "Building normal dark nether experimental pack..."
-  load("buildScripts/00.rb")
-  
-  puts "Building normal light nether experimental pack..."
-  load("buildScripts/01.rb")
-  
-  puts "Building compatable light nether experimental pack..."
-  load("buildScripts/11.rb")
-  
-  puts "Building compatable dark nether experimental pack..."
-  load("buildScripts/10.rb")
-  
   puts "Cleaning up..."
   FileUtils.rm_rf("packBuild/pack")
   FileUtils.copy_entry("packBuild/", "BUILD/packs")
