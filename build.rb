@@ -62,6 +62,7 @@ if ARGV[0]!="--no-pack"
 =end
   require 'modules/resetOptions.rb'
   require 'modules/buildPack.rb'
+  require 'modules/optionDefinitions.rb'
 
   $exportMode='r' # Release mode
   $options="./options.txt"
