@@ -14,5 +14,5 @@ def buildPack(packid)
       setOption($CompatabilityMode, "1")
       setOption($BrightNether, "1")
   end
-  #Archive::Zip.archive("packBuild/OSBES"+$exportMode+packid+".mcpack", "packBuild/pack/.")
+  Archive::Zip.archive("packBuild/OSBES"+$exportMode+packid+".mcpack", "packBuild/pack/.")
 end
