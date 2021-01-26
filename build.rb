@@ -18,16 +18,6 @@ def createDir(dir)
   FileUtils.rm_rf Dir.glob("#{dir}/*")
 end
 
-def setOption(option)
-  # save the content of the file
-  file = File.read(filename)
-  # replace (globally) the search string with the new string
-  new_content = file.gsub(originalstring, newstring)
-  # open the file again and write the new content to it
-  File.open(filename, 'w') { |line| line.puts new_content }
-end
-
-
 =begin
 def makePage(id)
   createDir("siteBuild/"+id)
@@ -61,22 +51,25 @@ if ARGV[0]!="--no-pack"
   # 3 - experimental features
 =end
   require './modules/resetOptions.rb'
+  require './modules/setOption.rb'
   require './modules/buildPack.rb'
   require './modules/optionDefinitions.rb'
 
   $exportMode='r' # Release mode
   $options="./options.txt"
+  $defaultOptions = File.readlines($options).map(&:chomp).join("\n")
+
   puts "Building normal dark nether pack..."
-  buildPack(00)
+  buildPack('00')
   
   puts "Building normal light nether pack..."
-  buildPack(01)
+  buildPack('01')
 
   puts "Building compatable dark nether pack..."
-  buildPack(10)
+  buildPack('10')
 
   puts "Building compatable light nether pack..."
-  buildPack(11)
+  buildPack('11')
   $exportMode='e' # Experimental mode
 =begin
   puts "Cleaning up..."
