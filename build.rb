@@ -18,7 +18,7 @@ def createDir(dir)
   FileUtils.rm_rf Dir.glob("#{dir}/*")
 end
 
-=begin
+
 def makePage(id)
   createDir("siteBuild/"+id)
   FileUtils.copy_entry("siteBuild/index.html", "siteBuild/"+id+"/index.html")
@@ -49,29 +49,30 @@ if ARGV[0]!="--no-pack"
   # 1 - dark mode
   # 2 - compatability mode
   # 3 - experimental features
-=end
+
   require './modules/resetOptions.rb'
   require './modules/setOption.rb'
   require './modules/buildPack.rb'
   require './modules/optionDefinitions.rb'
 
   $exportMode='r' # Release mode
-  $options="./options.txt"
+  $options="./packBuild/pack/options.txt"
   $defaultOptions = File.readlines($options).map(&:chomp).join("\n")
+  2.times {
+    puts "Building normal dark nether pack..."
+    buildPack('00')
 
-  puts "Building normal dark nether pack..."
-  buildPack('00')
-  
-  puts "Building normal light nether pack..."
-  buildPack('01')
+    puts "Building normal light nether pack..."
+    buildPack('01')
 
-  puts "Building compatable dark nether pack..."
-  buildPack('10')
+    puts "Building compatable dark nether pack..."
+    buildPack('10')
 
-  puts "Building compatable light nether pack..."
-  buildPack('11')
-  $exportMode='e' # Experimental mode
-=begin
+    puts "Building compatable light nether pack..."
+    buildPack('11')
+    $exportMode='e' # Experimental mode
+  }
+
   puts "Cleaning up..."
   FileUtils.rm_rf("packBuild/pack")
   
@@ -86,4 +87,3 @@ end
 puts "\nCopying site base..."
 FileUtils.copy_entry("siteBase/", "BUILD")
 puts "\ndone."
-=end
