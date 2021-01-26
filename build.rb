@@ -26,7 +26,7 @@ def replaceInFile(filename, originalstring, newstring)
   # open the file again and write the new content to it
   File.open(filename, 'w') { |line| line.puts new_content }
 end
-
+=begin
 def makePage(id)
   createDir("siteBuild/"+id)
   FileUtils.copy_entry("siteBuild/index.html", "siteBuild/"+id+"/index.html")
@@ -57,7 +57,7 @@ if ARGV[0]!="--no-pack"
   # 1 - dark mode
   # 2 - compatability mode
   # 3 - experimental features
-
+=end
   $exportMode='r' # Release mode
   puts "Building normal dark nether pack..."
   load("buildScripts/00.rb")
@@ -70,7 +70,7 @@ if ARGV[0]!="--no-pack"
 
   puts "Building compatable dark nether pack..."
   load("buildScripts/10.rb")
-  
+=begin
   puts "Cleaning up..."
   FileUtils.rm_rf("packBuild/pack")
   
@@ -98,3 +98,4 @@ end
 puts "\nCopying site base..."
 FileUtils.copy_entry("siteBase/", "BUILD")
 puts "\ndone."
+=end
