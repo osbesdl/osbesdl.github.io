@@ -58,7 +58,9 @@ if ARGV[0]!="--no-pack"
   $exportMode='r' # Release mode
   $options="./packBuild/pack/options.txt"
   $defaultOptions = File.readlines($options).map(&:chomp).join("\n")
+  loopcounter=0
   2.times {
+    loopcounter+=1
     puts "Building normal dark nether pack..."
     buildPack('00')
 
@@ -70,14 +72,15 @@ if ARGV[0]!="--no-pack"
 
     puts "Building compatable light nether pack..."
     buildPack('11')
-    $exportMode='e' # Experimental mode
-  }
 
-  puts "Cleaning up..."
-  FileUtils.rm_rf("packBuild/pack")
-  
-  puts "\nCloning experimental pack... (This takes a while)"
-  Git.clone('https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader', 'packBuild/pack')
+    if loopcounter==1
+      puts "Cleaning up..."
+      FileUtils.rm_rf("packBuild/pack")
+      puts "\nCloning experimental pack... (This takes a while)"
+      Git.clone('https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader', 'packBuild/pack')
+      $exportMode='e' # Experimental mode
+    end
+  }
 
   puts "Cleaning up..."
   FileUtils.rm_rf("packBuild/pack")
