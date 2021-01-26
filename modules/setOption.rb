@@ -1,5 +1,5 @@
 def setOption(option, value)
-  lineno=0
+  lineno=-1
   settingid=0
   File.open($options).each_line do |line|
     lineno+=1
