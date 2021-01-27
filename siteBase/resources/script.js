@@ -15,13 +15,13 @@ window.history.pushState("", "", '#r01')
 function info(option) {
   output = "<span title='"
   switch (option) {
-    case "brightnether":
+    case "bn":
       output += "Brightens the nether"
       break
-    case "compatabilitymode":
+    case "cm":
       output += "Disables normal and specular maps. This allows the use of other resource packs at the expense of the textures having less depth and no shine.\n\n!!!WARNING!!!\nThis feature is currently incredibly buggy, and many parts of the game don&#39;t look right."
       break
-    case "experimental":
+    case "ex":
       output += "Enables experimental features. Some parts of the game may not work as intended or expected.\n\nOnly enable if you know what you are doing"
       break
   }
@@ -30,13 +30,13 @@ function info(option) {
 }
 function infoclick(option) {
   switch (option) {
-    case "brightnether":
+    case "bn":
       alert("Bright Nether:\n\nBrightens the nether")
       break
-    case "compatabilitymode":
+    case "cm":
       alert("Compatability Mode:\n\nDisables normal and specular maps. This allows the use of other resource packs at the expense of the textures having less depth and no shine.\n\n!!!WARNING!!!\nThis feature is currently incredibly buggy, and many parts of the game don't look right.")
       break
-    case "experimental":
+    case "ex":
       alert("Experimental:\n\nEnables experimental features. Some parts of the game may not work as intended or expected.\n\nOnly enable if you know what you are doing")
       break
   }
