@@ -54,11 +54,7 @@ function boxclicked(imgid) {
   pageid = window.location.href.slice(-4)
   switch (imgid) {
     case "bn": // Bright Nether
-      if (pageid.substring(3,4) == 1) {
-        window.history.pushState("", "", '#' + pageid.substring(1,2) + pageid.substring(2,3) + '0')
-      } else {
-        window.history.pushState("", "", '#' + pageid.substring(1,2) + pageid.substring(2,3) + '1')
-      }
+      toggleOptionFlag(3);
       break
     case "cm": // Compatability Mode
       if(compatabilityprompt) {
@@ -66,11 +62,7 @@ function boxclicked(imgid) {
         compatabilityprompt=false
         document.getElementById(imgid).src = "resources/disabled.png"
       }
-      else if (pageid.substring(2,3) == 1) {
-        window.history.pushState("", "", '#' + pageid.substring(1,2) + '0' + pageid.substring(3,4))
-      } else {
-        window.history.pushState("", "", '#' + pageid.substring(1,2) + '1' + pageid.substring(3,4))
-      }
+      else toggleOptionFlag(2);
       break
       case "ex": // Experimental Features
         if(experimentalprompt) {
@@ -78,11 +70,7 @@ function boxclicked(imgid) {
           experimentalprompt=false
           document.getElementById(imgid).src = "resources/disabled.png"
         }
-         else if (pageid.substring(1,2) == 'e') {
-          window.history.pushState("", "", '#' + 'r' + pageid.substring(2,3) + pageid.substring(3,4))
-        } else {
-          window.history.pushState("", "", '#' + 'e' + pageid.substring(2,3) + pageid.substring(3,4))
-        }
+        else toggleOptionFlag(1, 'r', 'e');
         break
   }
 }
