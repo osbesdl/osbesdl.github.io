@@ -6,12 +6,10 @@ function toggleOptionFlag(pos, disabled, enabled) {
     newpageid=pageid
     newpageid[pos]=disabled
     window.history.pushState("", "", newpageid)
-    console.log("ye")
   } else {
     newpageid=pageid
     newpageid[pos]=enabled
     window.history.pushState("", "", newpageid)
-    console.log("ye")
   }
   disabled = undefined
   enabled = undefined
