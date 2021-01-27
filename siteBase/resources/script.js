@@ -45,9 +45,9 @@ function infoclick(option) {
 function boxclicked(imgid) {
   switch (document.getElementById(imgid).src.replace(/(^\w+:|^)\/\//, '')) {
     case (parent.location.host + "/resources/disabled.png"):
-      document.getElementById(imgid).src = "resources/check.png"
+      document.getElementById(imgid).src = "resources/enabled.png"
       break
-    case (parent.location.host + "/resources/check.png"):
+    case (parent.location.host + "/resources/enabled.png"):
       document.getElementById(imgid).src = "resources/disabled.png"
       break
   }
