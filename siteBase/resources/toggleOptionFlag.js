@@ -1,6 +1,6 @@
 function toggleOptionFlag(pos, disabled, enabled) {
-  if (typeof disabled === 'undefined') { disabled = '0'; }
-  if (typeof enabled === 'undefined') { enabled = '1'; }
+  if (typeof disabled === undefined) { disabled = '0'; }
+  if (typeof enabled === undefined) { enabled = '1'; }
   
   if (pageid.substring(pos,pos+1) == enabled) {
     newpageid=pageid
@@ -13,4 +13,6 @@ function toggleOptionFlag(pos, disabled, enabled) {
     window.history.pushState("", "", newpageid)
     console.log("ye")
   }
+  disabled = undefined
+  enabled = undefined
 }
