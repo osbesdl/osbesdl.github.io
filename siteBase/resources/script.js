@@ -44,11 +44,11 @@ function infoclick(option) {
 }
 function boxclicked(imgid) {
   switch (document.getElementById(imgid).src.replace(/(^\w+:|^)\/\//, '')) {
-    case (parent.location.host + "/resources/uncheck.png"):
+    case (parent.location.host + "/resources/disabled.png"):
       document.getElementById(imgid).src = "resources/check.png"
       break
     case (parent.location.host + "/resources/check.png"):
-      document.getElementById(imgid).src = "resources/uncheck.png"
+      document.getElementById(imgid).src = "resources/disabled.png"
       break
   }
   pageid = window.location.href.slice(-4)
@@ -64,7 +64,7 @@ function boxclicked(imgid) {
       if(compatabilityprompt) {
         Qual.infod('Warning', 'This feature is not finished. For now, only use this for development purposes.')
         compatabilityprompt=false
-        document.getElementById(imgid).src = "resources/uncheck.png"
+        document.getElementById(imgid).src = "resources/disabled.png"
       }
       else if (pageid.substring(2,3) == 1) {
         window.history.pushState("", "", '#' + pageid.substring(1,2) + '0' + pageid.substring(3,4))
@@ -76,7 +76,7 @@ function boxclicked(imgid) {
         if(experimentalprompt) {
           Qual.infod('Warning', 'This will enable features that may or may not be finshed. Parts of the game may behave in unexpected ways.')
           experimentalprompt=false
-          document.getElementById(imgid).src = "resources/uncheck.png"
+          document.getElementById(imgid).src = "resources/disabled.png"
         }
          else if (pageid.substring(1,2) == 'e') {
           window.history.pushState("", "", '#' + 'r' + pageid.substring(2,3) + pageid.substring(3,4))
