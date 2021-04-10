@@ -1,7 +1,7 @@
-// from the right
-// 1 - dark mode
-// 2 - compatability mode
-// 3 - experimental features
+// OSBES12
+// from right to left:
+// 1 - compatability mode
+// 2 - light nether
 
 var brightnether = "Bright Nether"
 var compatabilitymode = "Compatability Mode<span class='alphatag'> [Alpha]</span>"
@@ -77,7 +77,7 @@ function boxclicked(imgid) {
 
 function downloadPack() {
   if (window.location.href.charAt(window.location.href.length-3)=='r') {
-    window.location.href = './packs/OSBES' + window.location.href.slice(-3) + '.mcpack'
+    window.location.href = './packs/OSBES' + window.location.href.slice(-2) + '.mcpack'
   } else {
     window.location.href = 'https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/archive/refs/heads/develop.zip'
   }
