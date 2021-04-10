@@ -78,5 +78,7 @@ function boxclicked(imgid) {
 function downloadPack() {
   if (window.location.href.charAt(window.location.href.length-3)=='r') {
     window.location.href = './packs/OSBES' + window.location.href.slice(-3) + '.mcpack'
+  } else {
+    window.location.href = 'https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/archive/refs/heads/develop.zip'
   }
 }
