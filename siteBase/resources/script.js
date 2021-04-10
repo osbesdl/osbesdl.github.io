@@ -12,17 +12,21 @@ var experimentalprompt=true
 
 window.history.pushState("", "", '#r01')
 
+var brightnetherinfo = "Brightens the nether"
+var compatabilitymodeinfo = "Disables normal and specular maps. This allows the use of other resource packs at the expense of the textures having less depth and no shine.\n\n!!!WARNING!!!\nThis feature is currently incredibly buggy, and many parts of the game don't look right."
+var experimentalinfo = "Enables experimental features that are still being tested and any other options will be ignored. As these features are unfinished, certain parts of the game may not behave as intended or expected."
+
 function info(option) {
   output = "<span title='"
   switch (option) {
     case "bn":
-      output += "Brightens the nether"
+      output += brightnetherinfo
       break
     case "cm":
-      output += "Disables normal and specular maps. This allows the use of other resource packs at the expense of the textures having less depth and no shine.\n\n!!!WARNING!!!\nThis feature is currently incredibly buggy, and many parts of the game don&#39;t look right."
+      output += compatabilitymodeinfo.replace("'", "&#39;")
       break
     case "ex":
-      output += "Enables experimental features that are still being tested. Certain parts of the game may not behave as intended or expected, and any toggled options will be ignored."
+      output += experimentalinfo
       break
   }
   output += "'><sup class='info' onclick='infoclick(\""+option+"\")'>i</sup></span>"
@@ -31,13 +35,13 @@ function info(option) {
 function infoclick(option) {
   switch (option) {
     case "bn":
-      alert("Bright Nether:\n\nBrightens the nether")
+      alert("Bright Nether:\n\n"+brightnetherinf)
       break
     case "cm":
-      alert("Compatability Mode:\n\nDisables normal and specular maps. This allows the use of other resource packs at the expense of the textures having less depth and no shine.\n\n!!!WARNING!!!\nThis feature is currently incredibly buggy, and many parts of the game don't look right.")
+      alert("Compatability Mode:\n\n"+compatabilitymodeinfo)
       break
     case "ex":
-      alert("Experimental:\n\nEnables experimental features that are still being tested. Certain parts of the game may not behave as intended or expected, and any toggled options will be ignored.")
+      alert("Experimental:\n\n"+experimentalinfo)
       break
   }
   return output
