@@ -1,0 +1,209 @@
+// __multiversion__
+// This signals the loading code to prepend either #version 100 or #version 300 ES as appropriate.
+// It is about some UI controll buttons and inventory items (except shield :/)
+#include "fragmentVersionCentroidUV.h"
+
+#include "uniformEntityConstants.h"
+#include "uniformShaderConstants.h"
+
+LAYOUT_BINDING(0) uniform sampler2D TEXTURE_0;
+LAYOUT_BINDING(1) uniform sampler2D TEXTURE_1;
+
+#ifdef EFFECTS_OFFSET
+#include "uniformEffectsConstants.h"
+#endif
+
+varying vec4 color;
+
+#ifdef ENABLE_FOG
+varying vec4 fogColor;
+#endif
+
+#ifdef GLINT
+	varying vec2 layer1UV;
+	varying vec2 layer2UV;
+
+	vec4 glintBlend(vec4 dest, vec4 source) {
+		return vec4(source.rgb * source.rgb, 0.0) + dest;
+	}
+#endif
+
+/////////////////////Ingame UI fragment shader////////////////////////////
+
+void main()
+{
+
+
+
+
+
+
+#ifdef EFFECTS_OFFSET
+    vec4 diffuse = vec4(0.0);
+		
+	// Terrain attlass mostly is bigger than items attlass
+	// Tricky thing that do really needs refactoring (!) but it works currently and I dont wona touch it
+	if(TEXTURE_DIMENSIONS.x == 1024.0){
+		vec2 uvhp = uv - fract(uv * 32.0) / 64.0;
+		diffuse = texture2D( TEXTURE_0,  uvhp);
+		//vec4 diffuse = vec4(1.0, 0.0, 0.0, 1.0);
+	}else{
+		diffuse = texture2D(TEXTURE_0, uv);
+	}
+#else
+	#ifdef ALPHA_TEST // Inventory items (exclude UI buttons)
+		vec4 diffuse = vec4(0.0);
+		
+		// Terrain atlas mostly is bigger than items atlas
+		// This really needs refactoring (!), but it works currently and I dont wanna touch it
+		if(TEXTURE_DIMENSIONS.x == 1024.0){
+			vec2 uvhp = uv - fract(uv * 32.0) / 64.0;
+			diffuse = texture2D( TEXTURE_0,  uvhp);
+			//vec4 diffuse = vec4(1.0, 0.0, 0.0, 1.0);
+		}else{
+			diffuse = texture2D(TEXTURE_0, uv);
+		}
+		//vec4 diffuse = vec4(1.0, 0.0, 0.0, 1.0);
+	#else // Only UI buttons
+		vec4 diffuse = texture2D(TEXTURE_0, uv);
+	#endif
+#endif
+
+
+
+
+
+
+
+
+
+#ifdef MULTI_COLOR_TINT
+	// Texture is a mask for tinting with two colors
+	vec2 colorMask = diffuse.rg;
+
+	// Apply the base color tint
+	diffuse.rgb = colorMask.rrr * color.rgb;
+
+	// Apply the secondary color mask and tint so long as its grayscale value is not 0
+	diffuse.rgb = mix(diffuse, colorMask.gggg * CHANGE_COLOR, ceil(colorMask.g)).rgb;
+	//diffuse = vec4(1.0, 0.0, 0.0, 1.0);
+#endif
+
+
+
+
+
+
+
+
+
+
+
+
+#ifdef ALPHA_TEST //all except UI buttons
+	#ifdef ENABLE_VERTEX_TINT_MASK
+		if(diffuse.a <= 0.0){
+			discard;
+		}
+		//diffuse = vec4(1.0, 0.0, 0.0, 1.0);
+	#else
+		if(diffuse.a < 0.5){
+			discard;
+		}
+		//diffuse = vec4(1.0, 0.0, 0.0, 1.0);
+	#endif
+	 	
+
+		//diffuse = vec4(1.0, 0.0, 0.0, 1.0);
+#endif
+
+
+
+
+
+
+
+
+
+
+#if defined(ENABLE_VERTEX_TINT_MASK) && !defined(MULTI_COLOR_TINT)
+	diffuse.rgb = mix(diffuse.rgb, diffuse.rgb*color.rgb, diffuse.a);
+	if (color.a > 0.0) {
+		diffuse.a = (diffuse.a > 0.0) ? 1.0 : 0.0; // This line is needed for horse armour icon and dyed leather to work properly
+	}
+	//diffuse = vec4(1.0, 0.0, 0.0, 1.0);
+#endif
+
+
+
+
+
+
+#ifdef GLINT // magic itmes
+	vec4 layer1 = texture2D(TEXTURE_1, fract(layer1UV)).rgbr * GLINT_COLOR;
+	vec4 layer2 = texture2D(TEXTURE_1, fract(layer2UV)).rgbr * GLINT_COLOR;
+	vec4 glint = (layer1 + layer2);
+	glint.rgb *= color.a;
+
+	#ifdef INVENTORY
+		diffuse.rgb = glint.rgb;
+		//diffuse = vec4(1.0, 0.0, 0.0, 1.0);
+	#else
+		diffuse.rgb = glintBlend(diffuse, glint).rgb;
+		//diffuse = vec4(1.0, 0.0, 0.0, 1.0);
+	#endif
+	//diffuse = vec4(1.0, 0.0, 0.0, 1.0);
+#endif
+
+
+
+
+
+#ifdef USE_OVERLAY
+	//use either the diffuse or the OVERLAY_COLOR
+	diffuse.rgb = mix(diffuse, OVERLAY_COLOR, OVERLAY_COLOR.a).rgb;
+	//diffuse = vec4(1.0, 0.0, 0.0, 1.0);
+#endif
+
+
+
+
+
+
+#ifdef ENABLE_VERTEX_TINT_MASK
+
+	#ifdef ENABLE_CURRENT_ALPHA_MULTIPLY
+		diffuse = diffuse * vec4(1.0, 1.0, 1.0, HUD_OPACITY);
+		//diffuse = vec4(1.0, 0.0, 0.0, 1.0);
+	#endif
+
+
+
+
+
+	#elif !defined(MULTI_COLOR_TINT)
+		diffuse = diffuse * color;
+		//diffuse = vec4(1.0, 0.0, 0.0, 1.0);
+#endif
+
+
+
+
+
+		// Fog needs to be applied after the color tinting.
+#ifdef ENABLE_FOG
+	// If fog enabled we are know that it is not UI element
+	if(diffuse.b > diffuse.r && diffuse.b > diffuse.g){
+		diffuse.rgb = vec3(0.5,0.5,0.5); //rain splash hack
+	}
+	diffuse.rgb = mix(diffuse.rgb, fogColor.rgb, fogColor.a);
+	//diffuse = vec4(1.0, 0.0, 0.0, 1.0);
+#endif
+
+
+
+
+
+	gl_FragColor = diffuse;
+	//gl_FragColor = vec4(1.0,0.0,0.0,1.0);
+}
