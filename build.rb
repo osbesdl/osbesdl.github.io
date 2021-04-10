@@ -4,7 +4,6 @@ require 'archive/zip'
 require 'dir'
 require 'fileutils'
 require 'tempfile'
-require 'git'
 
 def ZipDir(directory, zipfile_name)
   Zip::ZipFile.open(zipfile_name, Zip::ZipFile::CREATE) do |zipfile|
@@ -32,8 +31,6 @@ def makePage(id)
   FileUtils.copy_entry("siteBuild/index.html", "siteBuild/"+id+"/index.html")
 end
 
-puts "Checking for pack base update..."
-system("git submodule update --init --recursive")
 if ARGV[0]!="--no-pack"
   puts "Creating directories..."
   createDir("packBuild")
@@ -43,20 +40,10 @@ if ARGV[0]!="--no-pack"
   puts "\nCopying pack base... (This takes a while)"
   FileUtils.copy_entry("packBase/", "packBuild/pack")
   
-  puts "Cleaning up pack base..."
-  FileUtils.rm("packBuild/pack/.git")
-  begin
-    FileUtils.rm("packBuild/pack/.gitignore ")
-  rescue
-    0
-  end
-  FileUtils.rm("packBuild/pack/LICENSE")
-  FileUtils.rm("packBuild/pack/README.md")
-  
-  # from the right
-  # 1 - dark mode
-  # 2 - compatability mode
-  # 3 - experimental features
+  # OSBES12
+  # from right to left:
+  # 1 - compatability mode
+  # 2 - light nether
 
   $exportMode='r' # Release mode
   puts "Building normal dark nether pack..."
@@ -69,25 +56,6 @@ if ARGV[0]!="--no-pack"
   load("buildScripts/11.rb")
 
   puts "Building compatable dark nether pack..."
-  load("buildScripts/10.rb")
-  
-  puts "Cleaning up..."
-  FileUtils.rm_rf("packBuild/pack")
-  
-  puts "\nCloning experimental pack... (This takes a while)"
-  Git.clone('https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader', 'packBuild/pack')
-
-  $exportMode='e' # Experimental mode
-  puts "Building normal dark nether experimental pack..."
-  load("buildScripts/00.rb")
-  
-  puts "Building normal light nether experimental pack..."
-  load("buildScripts/01.rb")
-  
-  puts "Building compatable light nether experimental pack..."
-  load("buildScripts/11.rb")
-  
-  puts "Building compatable dark nether experimental pack..."
   load("buildScripts/10.rb")
   
   puts "Cleaning up..."

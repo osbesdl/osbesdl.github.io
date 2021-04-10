@@ -1,7 +1,7 @@
-// from the right
-// 1 - dark mode
-// 2 - compatability mode
-// 3 - experimental features
+// OSBES12
+// from right to left:
+// 1 - compatability mode
+// 2 - light nether
 
 var brightnether = "Bright Nether"
 var compatabilitymode = "Compatability Mode<span class='alphatag'> [Alpha]</span>"
@@ -22,7 +22,7 @@ function info(option) {
       output += "Disables normal and specular maps. This allows the use of other resource packs at the expense of the textures having less depth and no shine.\n\n!!!WARNING!!!\nThis feature is currently incredibly buggy, and many parts of the game don&#39;t look right."
       break
     case "ex":
-      output += "Enables experimental features. Some parts of the game may not work as intended or expected.\n\nOnly enable if you know what you are doing"
+      output += "Enables experimental features that are still being tested. Certain parts of the game may not behave as intended or expected, and any toggled options will be ignored."
       break
   }
   output += "'><sup class='info' onclick='infoclick(\""+option+"\")'>i</sup></span>"
@@ -37,7 +37,7 @@ function infoclick(option) {
       alert("Compatability Mode:\n\nDisables normal and specular maps. This allows the use of other resource packs at the expense of the textures having less depth and no shine.\n\n!!!WARNING!!!\nThis feature is currently incredibly buggy, and many parts of the game don't look right.")
       break
     case "ex":
-      alert("Experimental:\n\nEnables experimental features. Some parts of the game may not work as intended or expected.\n\nOnly enable if you know what you are doing")
+      alert("Experimental:\n\nEnables experimental features that are still being tested. Certain parts of the game may not behave as intended or expected, and any toggled options will be ignored.")
       break
   }
   return output
@@ -66,7 +66,7 @@ function boxclicked(imgid) {
       break
       case "ex": // Experimental Features
         if(experimentalprompt) {
-          Qual.infod('Warning', 'This will enable features that may or may not be finshed. Parts of the game may behave in unexpected ways.')
+          Qual.infod('Warning', 'Enables experimental features that are still being tested and any other options will be ignored. As these features are unfinished, certain parts of the game may not behave as intended or expected.')
           experimentalprompt=false
           document.getElementById(imgid).src = "resources/disabled.png"
         }
@@ -76,5 +76,9 @@ function boxclicked(imgid) {
 }
 
 function downloadPack() {
-  window.location.href = './packs/OSBES' + window.location.href.slice(-3) + '.mcpack'
+  if (window.location.href.charAt(window.location.href.length-3)=='r') {
+    window.location.href = './packs/OSBES' + window.location.href.slice(-2) + '.mcpack'
+  } else {
+    window.location.href = 'https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/archive/refs/heads/develop.zip'
+  }
 }
