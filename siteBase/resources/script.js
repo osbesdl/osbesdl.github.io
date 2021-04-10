@@ -1,27 +1,21 @@
-// OSBES12
+// OSBES1
 // from right to left:
 // 1 - compatability mode
-// 2 - light nether
 
-var brightnether = "Bright Nether"
 var compatabilitymode = "Compatability Mode<span class='alphatag'> [Alpha]</span>"
 var experimental = "Experimental"
 
 var compatabilityprompt=true
 var experimentalprompt=true
 
-window.history.pushState("", "", '#r01')
+window.history.pushState("", "", '#r0')
 
-var brightnetherinfo = "Brightens the nether"
 var compatabilitymodeinfo = "Disables normal and specular maps. This allows the use of other resource packs at the expense of the textures having less depth and no shine.\n\n!!!WARNING!!!\nThis feature is currently incredibly buggy, and many parts of the game don't look right."
 var experimentalinfo = "Enables experimental features that are still being tested and any other options will be ignored. As these features are unfinished, certain parts of the game may not behave as intended or expected."
 
 function info(option) {
   output = "<span title='"
   switch (option) {
-    case "bn":
-      output += brightnetherinfo
-      break
     case "cm":
       output += compatabilitymodeinfo.replace("'", "&#39;")
       break
@@ -34,9 +28,6 @@ function info(option) {
 }
 function infoclick(option) {
   switch (option) {
-    case "bn":
-      alert("Bright Nether:\n\n"+brightnetherinf)
-      break
     case "cm":
       alert("Compatability Mode:\n\n"+compatabilitymodeinfo)
       break
@@ -55,11 +46,8 @@ function boxclicked(imgid) {
       document.getElementById(imgid).src = "resources/disabled.png"
       break
   }
-  pageid = window.location.href.slice(-4)
+  pageid = window.location.href.slice(-3)
   switch (imgid) {
-    case "bn": // Bright Nether
-      toggleOptionFlag(3);
-      break
     case "cm": // Compatability Mode
       if(compatabilityprompt) {
         Qual.infod('Warning', 'This feature is not finished. For now, only use this for development purposes.')
@@ -80,8 +68,8 @@ function boxclicked(imgid) {
 }
 
 function downloadPack() {
-  if (window.location.href.charAt(window.location.href.length-3)=='r') {
-    window.location.href = './packs/OSBES' + window.location.href.slice(-2) + '.mcpack'
+  if (window.location.href.charAt(window.location.href.length-2)=='r') {
+    window.location.href = './packs/OSBES' + window.location.href.slice(-1) + '.mcpack'
   } else {
     window.location.href = 'https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/archive/refs/heads/develop.zip'
   }

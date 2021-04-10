@@ -46,17 +46,11 @@ if ARGV[0]!="--no-pack"
   # 2 - light nether
 
   $exportMode='r' # Release mode
-  puts "Building normal dark nether pack..."
-  load("buildScripts/00.rb")
-  
-  puts "Building normal light nether pack..."
-  load("buildScripts/01.rb")
-  
-  puts "Building compatable light nether pack..."
-  load("buildScripts/11.rb")
+  puts "Building normal pack..."
+  load("buildScripts/0.rb")
 
-  puts "Building compatable dark nether pack..."
-  load("buildScripts/10.rb")
+  puts "Building compatable pack..."
+  load("buildScripts/1.rb")
   
   puts "Cleaning up..."
   FileUtils.rm_rf("packBuild/pack")
