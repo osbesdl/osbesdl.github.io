@@ -20,10 +20,11 @@
   }
   .packs {
     margin-left: 17vw;
-    font-size: 5vw;
+    font-size: 7vw;
     margin-left: 11.5vw;
     width: 72vw;
     margin-top: 30vh;
+    line-height: 2.5;
   }
   .alphatag {
     font-size: 3vw
