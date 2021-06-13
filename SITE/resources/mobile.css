@@ -26,6 +26,13 @@
     margin-top: 30vh;
     line-height: 2.5;
   }
+  .showhidden {
+    top: 60vh;
+    font-size: 6vw
+  }
+  .supportver {
+    font-size: 7vw;
+  }
   .alphatag {
     font-size: 3vw
   }

@@ -104,6 +104,12 @@ body {
   width: 20vw;
   margin-top: 35vh;
 }
+.showhidden {
+  position: relative;
+  top: 56vh;
+  text-align: center;
+  font-size: 1.2vw;
+}
 .supportver {
   padding-left: 10px;
   padding-right: 10px;
@@ -119,9 +125,6 @@ body {
   font-size:20;
   cursor: help;
   font-family: 'Roboto Mono', monospace;
-}
-.box {
-
 }
 .hidden {
   display :none;
