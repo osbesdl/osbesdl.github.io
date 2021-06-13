@@ -104,6 +104,13 @@ body {
   width: 20vw;
   margin-top: 35vh;
 }
+.supportver {
+  padding-left: 10px;
+  padding-right: 10px;
+  background: rgb(37, 37, 37);
+  border-radius: 30px;
+  font-size: 1.45vw;
+}
 .alphatag {
   font-size: 1vw;
 }
