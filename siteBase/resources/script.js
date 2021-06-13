@@ -1,28 +1,26 @@
-// from the right
-// 1 - dark mode
-// 2 - compatability mode
-// 3 - experimental features
+// OSBES1
+// from right to left:
+// 1 - compatability mode
 
-var brightnether = "Bright Nether"
 var compatabilitymode = "Compatability Mode<span class='alphatag'> [Alpha]</span>"
 var experimental = "Experimental"
 
 var compatabilityprompt=true
 var experimentalprompt=true
 
-window.history.pushState("", "", '#r01')
+window.history.pushState("", "", '#r0')
+
+var compatabilitymodeinfo = "Disables normal and specular maps. This allows the use of other resource packs at the expense of the textures having less depth and no shine.\n\n!!!WARNING!!!\nThis feature is currently incredibly buggy, and many parts of the game don't look right."
+var experimentalinfo = "Enables experimental features that are still being tested and any other options will be ignored. As these features are unfinished, certain parts of the game may not behave as intended or expected."
 
 function info(option) {
   output = "<span title='"
   switch (option) {
-    case "brightnether":
-      output += "Brightens the nether"
+    case "cm":
+      output += compatabilitymodeinfo.replace("'", "&#39;")
       break
-    case "compatabilitymode":
-      output += "Disables normal and specular maps. This allows the use of other resource packs at the expense of the textures having less depth and no shine.\n\n!!!WARNING!!!\nThis feature is currently incredibly buggy, and many parts of the game don&#39;t look right."
-      break
-    case "experimental":
-      output += "Enables experimental features. Some parts of the game may not work as intended or expected.\n\nOnly enable if you know what you are doing"
+    case "ex":
+      output += experimentalinfo
       break
   }
   output += "'><sup class='info' onclick='infoclick(\""+option+"\")'>i</sup></span>"
@@ -30,63 +28,49 @@ function info(option) {
 }
 function infoclick(option) {
   switch (option) {
-    case "brightnether":
-      alert("Bright Nether:\n\nBrightens the nether")
+    case "cm":
+      alert("Compatability Mode:\n\n"+compatabilitymodeinfo)
       break
-    case "compatabilitymode":
-      alert("Compatability Mode:\n\nDisables normal and specular maps. This allows the use of other resource packs at the expense of the textures having less depth and no shine.\n\n!!!WARNING!!!\nThis feature is currently incredibly buggy, and many parts of the game don't look right.")
-      break
-    case "experimental":
-      alert("Experimental:\n\nEnables experimental features. Some parts of the game may not work as intended or expected.\n\nOnly enable if you know what you are doing")
+    case "ex":
+      alert("Experimental:\n\n"+experimentalinfo)
       break
   }
   return output
 }
 function boxclicked(imgid) {
   switch (document.getElementById(imgid).src.replace(/(^\w+:|^)\/\//, '')) {
-    case (parent.location.host + "/resources/uncheck.png"):
-      document.getElementById(imgid).src = "resources/check.png"
+    case (parent.location.host + "/resources/disabled.png"):
+      document.getElementById(imgid).src = "resources/enabled.png"
       break
-    case (parent.location.host + "/resources/check.png"):
-      document.getElementById(imgid).src = "resources/uncheck.png"
+    case (parent.location.host + "/resources/enabled.png"):
+      document.getElementById(imgid).src = "resources/disabled.png"
       break
   }
-  pageid = window.location.href.slice(-4)
+  pageid = window.location.href.slice(-3)
   switch (imgid) {
-    case "bn": // Bright Nether
-      if (pageid.substring(3,4) == 1) {
-        window.history.pushState("", "", '#' + pageid.substring(1,2) + pageid.substring(2,3) + '0')
-      } else {
-        window.history.pushState("", "", '#' + pageid.substring(1,2) + pageid.substring(2,3) + '1')
-      }
-      break
     case "cm": // Compatability Mode
       if(compatabilityprompt) {
         Qual.infod('Warning', 'This feature is not finished. For now, only use this for development purposes.')
         compatabilityprompt=false
-        document.getElementById(imgid).src = "resources/uncheck.png"
+        document.getElementById(imgid).src = "resources/disabled.png"
       }
-      else if (pageid.substring(2,3) == 1) {
-        window.history.pushState("", "", '#' + pageid.substring(1,2) + '0' + pageid.substring(3,4))
-      } else {
-        window.history.pushState("", "", '#' + pageid.substring(1,2) + '1' + pageid.substring(3,4))
-      }
+      else toggleOptionFlag(2);
       break
       case "ex": // Experimental Features
         if(experimentalprompt) {
-          Qual.infod('Warning', 'This will enable features that may or may not be finshed. Parts of the game may behave in unexpected ways.')
+          Qual.infod('Warning', 'Enables experimental features that are still being tested and any other options will be ignored. As these features are unfinished, certain parts of the game may not behave as intended or expected.')
           experimentalprompt=false
-          document.getElementById(imgid).src = "resources/uncheck.png"
+          document.getElementById(imgid).src = "resources/disabled.png"
         }
-         else if (pageid.substring(1,2) == 'e') {
-          window.history.pushState("", "", '#' + 'r' + pageid.substring(2,3) + pageid.substring(3,4))
-        } else {
-          window.history.pushState("", "", '#' + 'e' + pageid.substring(2,3) + pageid.substring(3,4))
-        }
+        else toggleOptionFlag(1, 'r', 'e');
         break
   }
 }
 
 function downloadPack() {
-  window.location.href = './packs/OSBES' + window.location.href.slice(-3) + '.mcpack'
+  if (window.location.href.charAt(window.location.href.length-2)=='r') {
+    window.location.href = './packs/OSBES' + window.location.href.slice(-1) + '.mcpack'
+  } else {
+    window.location.href = 'https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/archive/refs/heads/develop.zip'
+  }
 }

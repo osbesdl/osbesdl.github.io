@@ -1,0 +1,1 @@
+Archive::Zip.archive("packBuild/OSBES0.mcpack", "packBuild/pack/.") # Normal mode

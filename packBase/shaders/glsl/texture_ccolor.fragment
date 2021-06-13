@@ -1,0 +1,53 @@
+// __multiversion__
+// This signals the loading code to prepend either #version 100 or #version 300 ES as appropriate.
+
+#include "fragmentVersionCentroid.h"
+
+#if __VERSION__ >= 300
+
+#if defined(TEXEL_AA) && defined(TEXEL_AA_FEATURE)
+_centroid in highp vec2 uv;
+#else
+_centroid in vec2 uv;
+#endif
+
+#else
+
+varying vec2 uv;
+varying vec3 color;
+#endif
+
+#include "uniformShaderConstants.h"
+#include "util.h"
+
+LAYOUT_BINDING(0) uniform sampler2D TEXTURE_0;
+
+
+///////////////////////UI, transition between dimensions texture, fire texture and skybox shader////////////////////////
+void main()
+{
+	vec4 diffuse;
+	// The texture shown on transition between dimensions is 32x32 size
+	if(TEXTURE_DIMENSIONS.x > 31.0 && TEXTURE_DIMENSIONS.x < 33.0){
+		diffuse = texture2D(TEXTURE_0, uv / 2.0);
+	}else{
+		if(TEXTURE_DIMENSIONS.x > 1023.0 && TEXTURE_DIMENSIONS.y > 1023.0){
+			highp vec2 uvhp = uv - fract(uv * 32.0) / 64.0;
+			diffuse = texture2D( TEXTURE_0, uvhp);
+		}else{
+			diffuse = texture2D(TEXTURE_0, uv);
+		}
+	}
+	
+	
+
+#ifdef ALPHA_TEST
+	if(diffuse.a < 0.5)
+		discard;
+#endif
+
+	gl_FragColor = CURRENT_COLOR * diffuse;
+	//gl_FragColor.rgb = FOG_COLOR.rgb;
+	//gl_FragColor.a = 1.0;
+	//gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+}

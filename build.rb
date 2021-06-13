@@ -4,7 +4,6 @@ require 'archive/zip'
 require 'dir'
 require 'fileutils'
 require 'tempfile'
-require 'git'
 
 def ZipDir(directory, zipfile_name)
   Zip::ZipFile.open(zipfile_name, Zip::ZipFile::CREATE) do |zipfile|
@@ -24,8 +23,6 @@ def makePage(id)
   FileUtils.copy_entry("siteBuild/index.html", "siteBuild/"+id+"/index.html")
 end
 
-puts "Checking for pack base update..."
-system("git submodule update --init --recursive")
 if ARGV[0]!="--no-pack"
   puts "Creating directories..."
   createDir("packBuild")
@@ -35,20 +32,10 @@ if ARGV[0]!="--no-pack"
   puts "\nCopying pack base... (This takes a while)"
   FileUtils.copy_entry("packBase/", "packBuild/pack")
   
-  puts "Cleaning up pack base..."
-  FileUtils.rm("packBuild/pack/.git")
-  begin
-    FileUtils.rm("packBuild/pack/.gitignore ")
-  rescue
-    0
-  end
-  FileUtils.rm("packBuild/pack/LICENSE")
-  FileUtils.rm("packBuild/pack/README.md")
-  
-  # from the right
-  # 1 - dark mode
-  # 2 - compatability mode
-  # 3 - experimental features
+  # OSBES12
+  # from right to left:
+  # 1 - compatability mode
+  # 2 - light nether
 
   require './modules/resetOptions.rb'
   require './modules/setOption.rb'
@@ -56,32 +43,12 @@ if ARGV[0]!="--no-pack"
   require './modules/optionDefinitions.rb'
 
   $exportMode='r' # Release mode
-  $options="./packBuild/pack/options.txt"
-  $defaultOptions = File.readlines($options).map(&:chomp).join("\n")
-  loopcounter=0
-  2.times {
-    loopcounter+=1
-    puts "Building normal dark nether pack..."
-    buildPack('00')
+  puts "Building normal pack..."
+  load("buildScripts/0.rb")
 
-    puts "Building normal light nether pack..."
-    buildPack('01')
-
-    puts "Building compatable dark nether pack..."
-    buildPack('10')
-
-    puts "Building compatable light nether pack..."
-    buildPack('11')
-
-    if loopcounter==1
-      puts "Cleaning up..."
-      FileUtils.rm_rf("packBuild/pack")
-      puts "\nCloning experimental pack... (This takes a while)"
-      Git.clone('https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader', 'packBuild/pack')
-      $exportMode='e' # Experimental mode
-    end
-  }
-
+  puts "Building compatable pack..."
+  load("buildScripts/1.rb")
+  
   puts "Cleaning up..."
   FileUtils.rm_rf("packBuild/pack")
   FileUtils.copy_entry("packBuild/", "BUILD/packs")

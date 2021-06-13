@@ -5,6 +5,8 @@
   <script src="lib/quantumalert/quantumalert.js"></script>
   <link rel="stylesheet" href="resources/style.css">
   <link rel="stylesheet" href="resources/mobile.css">
+  <script src="resources/packOption.js"></script>
+  <script src="resources/toggleOptionFlag.js"></script>
   <script src="resources/script.js"></script>
 </head>
 
@@ -24,9 +26,8 @@
     <div class="box">
       <div class="options">
         <script>
-          document.write(brightnether + ' <span class="checkboxes"><a onclick="boxclicked(\'bn\')"><img style="cursor: pointer;" id="bn" src="resources/check.png"></img></a></span>' + info("brightnether") + '<br>')
-          document.write(compatabilitymode + ' <span class="checkboxes"><a onclick="boxclicked(\'cm\')"><img style="cursor: pointer;" id="cm" src="resources/uncheck.png"></img></a></span>' + info("compatabilitymode") + '<br>')
-          document.write(experimental + ' <span class="checkboxes"><a onclick="boxclicked(\'ex\')"><img style="cursor: pointer;" id="ex" src="resources/uncheck.png"></img></a></span>' + info("experimental") + '<br>')
+          packOption(compatabilitymode,"cm","disabled")
+          packOption(experimental,"ex","disabled")
         </script>
       </div>
       <div class="download">

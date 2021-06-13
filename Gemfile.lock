@@ -5,10 +5,7 @@ GEM
       io-like (~> 0.3.0)
     dir (0.1.2)
     fileutils (1.5.0)
-    git (1.8.1)
-      rchardet (~> 1.8)
     io-like (0.3.1)
-    rchardet (1.8.0)
 
 PLATFORMS
   ruby
@@ -18,7 +15,6 @@ DEPENDENCIES
   archive-zip (~> 0.12.0)
   dir (~> 0.1.2)
   fileutils (~> 1.5)
-  git (~> 1.8)
 
 BUNDLED WITH
    2.2.3
