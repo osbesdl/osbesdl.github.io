@@ -1,12 +1,9 @@
-function downloadPack(version) {
-  window.location.href = './packs/OSBESv' + version + '.mcpack'
-}
 function pack(version, badge) {
-  output='<a onclick="downloadPack(\'' + version + '\')"><img src="resources/download.png" width="8%"></img></a> OSBES v' + version
+  output='<a href="./packs/OSBESv' + version + '.mcpack"><img src="resources/download.png" width="8%"></img> OSBES v' + version;
   if (badge == "latest") {
-    output+=' <img src="resources/badges/latest.svg" height="5%"></img>'
+    output+=' <img src="resources/badges/latest.svg" height="25px"></img>'
   }
-  document.write(output+"<br>");
+  document.write(output+"</a><br>");
 }
 
 // Pack definitions

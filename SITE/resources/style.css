@@ -162,6 +162,10 @@ body {
 .credit a {
   color: white;
 }
+.packs a {
+  color: white;
+  text-decoration: none;
+}
 #pop_heading {
   font-family: 'Roboto', sans-serif;
 }
