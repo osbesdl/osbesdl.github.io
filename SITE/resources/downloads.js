@@ -1,12 +1,22 @@
 function pack(version, badge) {
-  output='<a href="./packs/OSBESv' + version + '.mcpack"><img src="resources/download.png" width="8%"></img> OSBES v' + version;
+  if (version!="Experimental") {
+    output='<a href="./packs/OSBESv' + version + '.mcpack"><img src="resources/download.png" width="8%"></img> OSBES v' + version;
+  } else {
+    output='<a href="https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/archive/refs/heads/develop.zip"><img src="resources/download.png" width="8%"></img> OSBES ' + version;
+  }
+  switch (badge) {
+    case "latest": output+=' <img src="resources/badges/latest.svg" height="25px"></img>'; break
+    case "legacy": output+=' <img src="resources/badges/legacy.svg" height="25px"></img>'; break
+    case "experimental": output+=' <img src="resources/badges/experimental.svg" height="25px"></img>'; break
+  }
   if (badge == "latest") {
-    output+=' <img src="resources/badges/latest.svg" height="25px"></img>'
+    
   }
   document.write(output+"</a><br>");
 }
 
 // Pack definitions
+pack("Experimental", "experimental")
 pack("0.12.3", "latest");
 document.write("<div class='hidden' id='hidden'>");
 pack("0.12.2");
