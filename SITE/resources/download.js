@@ -1,3 +1,3 @@
 function downloadPack(version) {
-  window.location.href = './packs/OSBES' + version + '.mcpack'
+  window.location.href = './packs/OSBESv' + version + '.mcpack'
 }

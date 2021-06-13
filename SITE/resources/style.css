@@ -1,6 +1,9 @@
 * {
   overflow: hidden; /* Hide scrollbars */
 }
+a {
+  cursor: pointer;
+}
 .checkboxes img {
   width: 3.7vh;
   height: 3.7vh;
@@ -80,7 +83,7 @@ body {
   padding-bottom: 1.6vh;
   margin-top: 5vh;
 }
-.options {
+.packs {
   position: absolute;
   text-align: left;
   margin-left: 40vw;
@@ -92,7 +95,7 @@ body {
   font-size: 1.6vw;
 }
 .alphatag {
-  font-size: 1vw
+  font-size: 1vw;
 }
 .info {
   color:rgb(192, 192, 192);
@@ -103,7 +106,7 @@ body {
 .box {
   background: rgb(55, 55, 55);
   padding-top: 4vh;
-  padding-bottom: 6vh;
+  padding-bottom: 8vh;
   padding-left: 2vw;
   padding-right: 2vw;
   border-radius: 60px;
