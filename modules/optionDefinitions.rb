@@ -1,2 +1,0 @@
-$BrightNether="BrightNether"
-$CompatabilityMode="CompatabilityMode"
