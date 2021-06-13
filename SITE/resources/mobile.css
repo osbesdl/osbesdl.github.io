@@ -15,15 +15,15 @@
   }
   .credit {
     margin-bottom: 30px;
-  }
-  .box {
-    margin-left: 11.5vw;
-    width: 72vw;
-    margin-top: 30vh;
+    top: 0px;
+    margin-top: 23.5vh
   }
   .packs {
     margin-left: 17vw;
     font-size: 5vw;
+    margin-left: 11.5vw;
+    width: 72vw;
+    margin-top: 30vh;
   }
   .alphatag {
     font-size: 3vw
