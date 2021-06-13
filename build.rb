@@ -17,14 +17,6 @@ def createDir(dir)
   FileUtils.rm_rf Dir.glob("#{dir}/*")
 end
 
-def replaceInFile(filename, originalstring, newstring)
-  # save the content of the file
-  file = File.read(filename)
-  # replace (globally) the search string with the new string
-  new_content = file.gsub(originalstring, newstring)
-  # open the file again and write the new content to it
-  File.open(filename, 'w') { |line| line.puts new_content }
-end
 
 def makePage(id)
   createDir("siteBuild/"+id)
@@ -44,6 +36,11 @@ if ARGV[0]!="--no-pack"
   # from right to left:
   # 1 - compatability mode
   # 2 - light nether
+
+  require './modules/resetOptions.rb'
+  require './modules/setOption.rb'
+  require './modules/buildPack.rb'
+  require './modules/optionDefinitions.rb'
 
   $exportMode='r' # Release mode
   puts "Building normal pack..."
