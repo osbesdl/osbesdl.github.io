@@ -2,6 +2,9 @@
   .logo {
     background-size: 160vh;
   }
+  .logo img {
+    height: 12vh;
+  }
   .links {
     margin-top: 20vh;
   }
@@ -16,7 +19,7 @@
   .credit {
     margin-bottom: 30px;
     top: 0px;
-    margin-top: 23.5vh
+    margin-top: 20vh;
   }
   .packs {
     margin-left: 17vw;
