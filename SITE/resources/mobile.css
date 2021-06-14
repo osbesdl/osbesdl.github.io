@@ -29,8 +29,14 @@
     margin-top: 30vh;
     line-height: 2.5;
   }
-  .badge {
+  .experimental {
+    font-size: 5vw;
+  }
+  .badgealt {
     height: 4vw;
+  }
+  .badge {
+    height: 5vw;
   }
   .showhidden {
     font-size: 6vw;
@@ -40,7 +46,7 @@
     width: 6vw;
   }
   .supportver {
-    font-size: 4vw;
+    font-size: 5vw;
   }
   .alphatag {
     font-size: 3vw

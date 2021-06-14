@@ -104,8 +104,14 @@ body {
   width: 20vw;
   margin-top: 35vh;
 }
+.experimental {
+  font-size: 1.2vw;
+}
+.badgealt {
+  height: 1.1vw;
+}
 .badge {
-  height: 1vw;
+  height: 1.3vw;
 }
 .showhidden {
   position: relative;
