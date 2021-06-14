@@ -104,9 +104,13 @@ body {
   width: 20vw;
   margin-top: 35vh;
 }
+.badge {
+  height: 1vw;
+}
 .showhidden {
   position: relative;
   text-align: center;
+  left: 5vw;
   font-size: 1.2vw;
 }
 .supportver {

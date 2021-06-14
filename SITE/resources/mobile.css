@@ -20,17 +20,21 @@
   }
   .packs {
     margin-left: 17vw;
-    font-size: 7vw;
+    font-size: 6vw;
     margin-left: 11.5vw;
     width: 72vw;
     margin-top: 30vh;
     line-height: 2.5;
   }
+  .badge {
+    height: 4vw;
+  }
   .showhidden {
-    font-size: 6vw
+    font-size: 6vw;
+    left: 12vw;
   }
   .supportver {
-    font-size: 7vw;
+    font-size: 4vw;
   }
   .alphatag {
     font-size: 3vw

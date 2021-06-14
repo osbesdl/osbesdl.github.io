@@ -1,13 +1,13 @@
 function pack(version, badge) {
   if (version!="Experimental") {
-    output='<a href="./packs/OSBESv' + version + '.mcpack"><img src="resources/download.png" width="8%"></img> OSBES v' + version;
+    output='<a href="./packs/OSBESv' + version + '.mcpack"><img src="resources/download.png" width="8vh"></img> OSBES v' + version;
   } else {
-    output='<a href="https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/archive/refs/heads/develop.zip"><img src="resources/download.png" width="8%"></img> OSBES ' + version;
+    output='<a href="https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/archive/refs/heads/develop.zip"><img src="resources/download.png" width="8vh"></img> OSBES ' + version;
   }
   switch (badge) {
-    case "latest": output+=' <img src="resources/badges/latest.svg" height="25px"></img>'; break
-    case "legacy": output+=' <img src="resources/badges/legacy.svg" height="25px"></img>'; break
-    case "experimental": output+=' <img src="resources/badges/experimental.svg" height="25px"></img>'; break
+    case "latest": output+=' <img class="badge" src="resources/badges/latest.png"></img>'; break
+    case "legacy": output+=' <img class="badge" src="resources/badges/legacy.png"></img>'; break
+    case "experimental": output+=' <img class="badge" src="resources/badges/experimental.png"></img>'; break
   }
   if (badge == "latest") {
     
