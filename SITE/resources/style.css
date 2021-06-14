@@ -4,6 +4,14 @@
 a {
   cursor: pointer;
 }
+
+.row {
+  display: flex;
+}
+.column {
+  flex: 50%;
+}
+
 .checkboxes img {
   width: 3.7vh;
   height: 3.7vh;
@@ -107,9 +115,18 @@ body {
 .experimental {
   font-size: 1.2vw;
 }
+
 .badgealt {
   height: 1.1vw;
+  
 }
+.supexp {
+  padding-left: 3.5vw
+}
+.suplat {
+  padding-left: 5.7vw
+}
+
 .badge {
   height: 1.3vw;
 }
