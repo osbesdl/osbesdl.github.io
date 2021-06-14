@@ -187,7 +187,7 @@ body {
 .egg {
   cursor: url('egg.png'), auto;	
   position: fixed;
-  bottom: 0px;
-  right: 0px;
+  bottom: 10vh;
+  right: 10vw;
   font-size: 3vh
 }
