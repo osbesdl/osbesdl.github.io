@@ -1,8 +1,8 @@
 function pack(version, badge) {
   if (version!="Experimental") {
-    output='<a href="./packs/OSBESv' + version + '.mcpack"><img src="resources/download.png" width="8vh"></img> OSBES v' + version;
+    output='<a href="./packs/OSBESv' + version + '.mcpack"><img src="resources/download.png" class="download"></img> OSBES v' + version;
   } else {
-    output='<a href="https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/archive/refs/heads/develop.zip"><img src="resources/download.png" width="8vh"></img> OSBES ' + version;
+    output='<a href="https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/archive/refs/heads/develop.zip"><img src="resources/download.png" class="download"></img> OSBES ' + version;
   }
   switch (badge) {
     case "latest": output+=' <img class="badge" src="resources/badges/latest.png"></img>'; break

@@ -144,9 +144,7 @@ body {
   margin-top:40vh
 } */
 .download {
-  margin-top: 40vh;
-  width: 100%;
-  cursor: pointer;
+  width: 1.6vw;
 }
 .download:hover {
   animation: filter-animation 2s infinite;
