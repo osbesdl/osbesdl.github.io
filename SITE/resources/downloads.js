@@ -1,6 +1,10 @@
-function pack(version, badge) {
+function pack(version, badge, customurl) {
   if (version!="Experimental") {
-    output='<a href="./packs/OSBESv' + version + '.mcpack"><img src="resources/download.png" class="download"></img> OSBES v' + version;
+    if (typeof customurl == 'undefined') {
+      output='<a href="./packs/OSBESv' + version + '.mcpack"><img src="resources/download.png" class="download"></img> OSBES v' + version;
+    } else { // Custom url is stated
+      output='<a href="'+ customurl +'"><img src="resources/download.png" class="download"></img> OSBES v' + version;
+    }
   } else {
     output='<a href="https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/archive/refs/heads/develop.zip" class="experimental"><img src="resources/download.png" class="download"></img> OSBES ' + version;
   }
@@ -17,10 +21,11 @@ function pack(version, badge) {
 
 // Pack definitions
 pack("Experimental", "experimental")
-pack("0.12.3", "latest");
+pack("0.12.3", "latest", "https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/releases/download/0.12.3a/OSBES-v0_12_3a.mcpack");
+
 document.write("<div class='hidden' id='hidden'>");
-pack("0.12.2");
-pack("0.12.1");
+pack("0.12.2", "NA", "https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/releases/download/0.12.2a/OSBES-v-0-12-2-a.mcpack");
+pack("0.12.1", "NA", "https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/releases/download/0.12.1/OSBES-v0.12.1a.mcpack");
 pack("0.11.2");
 pack("0.11.1", "legacy");
 pack("0.11.0", "legacy");
