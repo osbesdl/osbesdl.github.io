@@ -21,12 +21,13 @@ function pack(version, badge, customurl) {
 
 // Pack definitions
 pack("Experimental", "experimental")
-pack("0.12.3", "latest", "https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/releases/download/0.12.3a/OSBES-v0_12_3a.mcpack");
+pack("0.13.1", "latest", "https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/releases/download/0.13.1/OSBES-v0.13.1.mcpack");
 
 document.write("<div class='hidden' id='hidden'>");
-pack("0.12.2", "NA", "https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/releases/download/0.12.2a/OSBES-v-0-12-2-a.mcpack");
-pack("0.12.1", "NA", "https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/releases/download/0.12.1/OSBES-v0.12.1a.mcpack");
-pack("0.11.2");
+pack("0.12.3", "legacy", "https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/releases/download/0.12.3a/OSBES-v0_12_3a.mcpack");
+pack("0.12.2", "legacy", "https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/releases/download/0.12.2a/OSBES-v-0-12-2-a.mcpack");
+pack("0.12.1", "legacy", "https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/releases/download/0.12.1/OSBES-v0.12.1a.mcpack");
+pack("0.11.2", "legacy");
 pack("0.11.1", "legacy");
 pack("0.11.0", "legacy");
 pack("0.10.2", "legacy");
