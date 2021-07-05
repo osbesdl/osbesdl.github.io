@@ -1,5 +1,5 @@
 function pack(version, badge, customurl) {
-  if (version!="Experimental") {
+  if (version!="Alpha") {
     if (typeof customurl == 'undefined') {
       output='<a href="./packs/OSBESv' + version + '.mcpack"><img src="resources/download.png" class="download"></img> OSBES v' + version;
     } else { // Custom url is stated
