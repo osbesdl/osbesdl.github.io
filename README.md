@@ -1,7 +1,7 @@
 # OSBESdl
 OSBES's download page
 
-![GitHub last commit](https://img.shields.io/github/last-commit/OpenSauce04/OSBESdl)
+![GitHub last commit](https://img.shields.io/github/last-commit/osbesdl/osbesdl.github.io)
 
 ## Contributing
 1. Make a fork of the git repository
