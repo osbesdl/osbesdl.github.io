@@ -6,7 +6,7 @@ function pack(version, badge, customurl) {
       output='<a href="'+ customurl +'"><img src="resources/download.png" class="download"></img> OSBES v' + version;
     }
   } else {
-    output='<a href="https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/archive/refs/heads/develop.zip" class="experimental"><img src="resources/download.png" class="download"></img> OSBES ' + version;
+    output='<a href="https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/archive/refs/heads/develop.zip"><img src="resources/download.png" class="download"></img> OSBES ' + version;
   }
   switch (badge) {
     case "latest": output+=' <img class="badge" src="resources/badges/latest.svg"></img>'; break
@@ -20,7 +20,7 @@ function pack(version, badge, customurl) {
 }
 
 // Pack definitions
-pack("Experimental", "experimental")
+pack("Alpha", "experimental")
 pack("0.13.1", "latest", "https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/releases/download/0.13.1/OSBES-v0.13.1.mcpack");
 
 document.write("<div class='hidden' id='hidden'>");
