@@ -1,8 +1,9 @@
 @media (orientation: portrait) {
-  .logo {
+  .bg {
     background-size: 160vh;
   }
   .logo img {
+	padding-top: 6vh;
     height: 12vh;
   }
   .largelinks {
@@ -10,7 +11,7 @@
 	font-size: 3vh;
   }
   .links {
-    margin-top: 0vh;
+    margin-top: 25vh;
   }
   .info {
     margin-left: 3vw;
@@ -30,7 +31,7 @@
     font-size: 6vw;
     margin-left: 11.5vw;
     width: 72vw;
-    margin-top: 0vh;
+    margin-top: 13vh;
     line-height: 2.5;
   }
   .experimental {

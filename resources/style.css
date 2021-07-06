@@ -65,7 +65,7 @@ body {
   bottom: 0;
   top: 0;
 }
-.logo {
+.bg {
   top: 0;
   right: 0;
   left: 0;
@@ -77,6 +77,7 @@ body {
   background-repeat: no-repeat;
 }
 .logo img {
+  padding-top: 9vh;
   height: 18vh;
 }
 .largelinks {
@@ -90,6 +91,7 @@ body {
   padding-bottom: 1.6vh;
   margin-top: 5vh;
   font-family: 'Roboto Condensed', sans-serif;
+  position: absolute
 }
 .links {
   font-size: 1.6vh;
@@ -98,9 +100,9 @@ body {
   left: 0px;
   top: 0px;
   padding-right: 2vh;
-  margin-top: 1.6vh;
+  margin-top: 17.6vh;
   padding-bottom: 1.6vh;
-  margin-top: 0vh;
+  position: absolute;
 }
 .packs {
   position: absolute;
