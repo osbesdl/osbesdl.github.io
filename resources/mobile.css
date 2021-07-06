@@ -5,8 +5,11 @@
   .logo img {
     height: 12vh;
   }
+  .largelinks {
+	margin-top: 17vh;
+  }
   .links {
-    margin-top: 20vh;
+    margin-top: 0vh;
   }
   .info {
     margin-left: 3vw;
@@ -26,7 +29,7 @@
     font-size: 6vw;
     margin-left: 11.5vw;
     width: 72vw;
-    margin-top: 30vh;
+    margin-top: 0vh;
     line-height: 2.5;
   }
   .experimental {
