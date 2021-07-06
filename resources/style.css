@@ -120,7 +120,7 @@ body {
   padding-bottom: 4vh;
   padding-left: 2vw;
   padding-right: 2vw;
-  border-radius: 60px;
+  border-radius: 3vw;
   margin-left: 38vw;
   width: 20vw;
   margin-top: 10vh;
@@ -152,7 +152,7 @@ body {
 .supportver {
   padding-left: 0px;
   background: rgb(37, 37, 37);
-  border-radius: 30px;
+  border-radius: 3vw;
   font-size: 1.45vw;
 }
 .alphatag {
