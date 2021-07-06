@@ -150,8 +150,7 @@ body {
   font-size: 1.2vw;
 }
 .supportver {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 0px;
   background: rgb(37, 37, 37);
   border-radius: 30px;
   font-size: 1.45vw;
