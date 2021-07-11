@@ -82,7 +82,7 @@ body {
   left: 0px;
   top: 0px;
   padding-right: 2vh;
-  margin-top: 17.6vh;
+  margin-top: 26vh;
   padding-bottom: 1.6vh;
   position: absolute;
 }
@@ -130,6 +130,14 @@ body {
   text-align: center;
   left: 5vw;
   font-size: 1.2vw;
+}
+.presettemp {
+  height: 8vh;
+  padding-top: 3vh;
+  padding-right: 1vw;
+}
+.presetrepo {
+  height: 8vh;
 }
 .supportver {
   padding-left: 0px;
