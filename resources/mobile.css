@@ -1,6 +1,6 @@
 @media (orientation: portrait) {
   .bg {
-    background-size: 160vh;
+    background-size: 200vw;
   }
   .logo img {
 	  padding-top: 7vh;

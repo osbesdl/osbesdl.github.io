@@ -24,8 +24,8 @@ a {
 }
 
 body {
-  background: rgb(32, 32, 32);
-  background-image: image("bg.jpg");
+  background: rgb(30, 30, 30);
+  background-image: image("bg.png");
   background-repeat: repeat;
   background-size: cover;
   font-size: 36px;
@@ -53,7 +53,7 @@ body {
   left: 0;
   position: absolute;
   padding-bottom: 2vh;
-  background-image: url("bg.jpg");
+  background-image: url("bg.png");
   background-size: 100vw;
   height: 100vh;
   background-repeat: no-repeat;
