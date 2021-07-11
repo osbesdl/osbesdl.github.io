@@ -1,9 +1,9 @@
 @media (orientation: portrait) {
   .bg {
-    background-size: 160vh;
+    background-size: 200vw;
   }
   .logo img {
-	padding-top: 7vh;
+	  padding-top: 7vh;
     height: 12vh;
   }
   .largelinks {
@@ -11,7 +11,7 @@
 	font-size: 3vh;
   }
   .links {
-    margin-top: 25vh;
+    margin-top: -100px;
   }
   .info {
     margin-left: 3vw;
@@ -31,13 +31,21 @@
     font-size: 6vw;
     margin-left: 11.5vw;
     width: 72vw;
-	border-radius: 5vh;
+	  border-radius: 5vh;
     margin-top: 13vh;
     line-height: 2.5;
   }
+  .presettemp {
+    height: 5vh;
+    padding-top: 3vh;
+    padding-right: 1vw;
+  }
+  .presetrepo {
+    height: 5vh;
+  }
   .supportver {
-	border-radius: 5vh;
-	margin-left: 5vw;
+	  border-radius: 5vh;
+	  margin-left: 5vw;
     margin-right: 5vw;
   }
   .experimental {

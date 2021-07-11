@@ -9,9 +9,9 @@ function pack(version, badge, customurl) {
     output='<a href="https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/archive/refs/heads/develop.zip"><img src="resources/download.png" class="download"></img> OSBES ' + version;
   }
   switch (badge) {
-    case "latest": output+=' <img class="badge" src="resources/badges/latest.svg"></img>'; break
-    case "legacy": output+=' <img class="badge" src="resources/badges/legacy.svg"></img>'; break
-    case "experimental": output+=' <img class="badge" src="resources/badges/experimental.svg"></img>'; break
+    case "latest": output+=' <img class="badge" src="resources/badges/latest.png"></img>'; break
+    case "legacy": output+=' <img class="badge" src="resources/badges/legacy.png"></img>'; break
+    case "experimental": output+=' <img class="badge" src="resources/badges/experimental.png"></img>'; break
   }
   if (badge == "latest") {
     
