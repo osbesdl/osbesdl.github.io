@@ -11,7 +11,15 @@
 	font-size: 3vh;
   }
   .links {
-    margin-top: -100px;
+    margin-top: 90vh;
+    margin-right: 24vw;
+  }
+  .newline {
+    display:contents;
+  }
+  .links img {
+    width: 12vw;
+    padding-left: 5vw;
   }
   .info {
     margin-left: 3vw;
@@ -26,14 +34,17 @@
     top: 0px;
     margin-top: 20vh;
   }
-  .packs {
-    margin-left: 17vw;
+  .box {
     font-size: 6vw;
     margin-left: 11.5vw;
     width: 72vw;
+    height: 45vh;
 	  border-radius: 5vh;
     margin-top: 13vh;
     line-height: 2.5;
+  }
+  .boxcontent {
+    height: 45vh;
   }
   .presettemp {
     height: 5vh;

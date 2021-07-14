@@ -91,6 +91,9 @@ body {
   width: 4vw;
   height: auto;
 }
+.newline {
+  display: block;
+}
 .box {
   position: absolute;
   text-align: left;
