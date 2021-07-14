@@ -86,6 +86,11 @@ body {
   padding-bottom: 1.6vh;
   position: absolute;
 }
+.links img {
+  padding-top: 1vh;
+  width: 4vw;
+  height: auto;
+}
 .packs {
   position: absolute;
   text-align: left;
