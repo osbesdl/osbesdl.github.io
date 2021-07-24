@@ -98,7 +98,7 @@ body {
 .box {
   position: absolute;
   text-align: left;
-  margin-left: 40vw;
+  margin-left: 38vw;
   left: 0;
   right: 0;
   font-size: 1.6vw;
@@ -112,7 +112,6 @@ body {
   padding-left: 2vw;
   padding-right: 2vw;
   border-radius: 3vw;
-  margin-left: 38vw;
   width: 20vw;
   height: 20vw;
   max-height: 40vh;
