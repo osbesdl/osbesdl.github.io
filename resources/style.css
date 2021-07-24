@@ -208,12 +208,13 @@ body {
 .credit {
   position: absolute;
   bottom: 5vh;
-  left: 40vw;
+  left: 41vw;
   padding-left: 2vh;
   padding-bottom: 3vh;
   font-size: 1vw;
   text-align: center;
   color: white;
+  opacity: 0.2;
 }
 .credit a {
   color: white;
