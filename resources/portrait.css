@@ -80,6 +80,9 @@
     font-size: 6vw;
     left: 12vw;
   }
+  .showhiddenpadding {
+    height: 0px;
+  }
   .download {
     width: 6vw;
   }
