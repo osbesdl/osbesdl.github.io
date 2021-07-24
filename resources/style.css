@@ -210,14 +210,6 @@ body {
   font-size: 1vw;
   text-align: center;
   color: white;
-
-  background: rgba(40, 40, 40, 0.4);
-  box-shadow: 5px 10px 10px #000000;
-  padding-top: 4vh;
-  padding-bottom: 4vh;
-  padding-left: 2vw;
-  padding-right: 2vw;
-  border-radius: 3vw;
 }
 .credit a {
   color: white;
