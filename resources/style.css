@@ -73,13 +73,11 @@ body {
   padding-bottom: 1.6vh;
   margin-top: 5vh;
   font-family: 'Product Sans';
-  position: absolute
+  position: absolute;
 }
 .links {
   font-size: 1.6vh;
   text-align: right;
-  right: 0px;
-  left: 0px;
   top: 0px;
   padding-right: 2vh;
   margin-top: 26vh;

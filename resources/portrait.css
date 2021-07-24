@@ -7,19 +7,28 @@
     height: 12vh;
   }
   .largelinks {
-	margin-top: 17vh;
-	font-size: 3vh;
+	  margin-top: 17vh;
+	  font-size: 3vh;
   }
   .links {
     margin-top: 90vh;
-    margin-right: 24vw;
+    margin-left: 10.5vw;
+    width: 70vw;
+
+    background: rgba(40, 40, 40, 0.4);
+    box-shadow: 9px 9px 25px #00000046;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 1vw;
+    padding-right: 7vw;
+    border-radius: 3vw;
   }
   .newline {
     display:contents;
   }
   .links img {
     width: 12vw;
-    padding-left: 5vw;
+    margin-left: 5vw;
   }
   .info {
     margin-left: 3vw;
