@@ -51,13 +51,14 @@
     font-size: 6vw;
     margin-left: 11.5vw;
     width: 72vw;
-    height: 45vh;
+    height: 58vw;
+    max-height: 45vh;
 	  border-radius: 5vh;
     margin-top: 13vh;
     line-height: 2.5;
   }
   .boxcontent {
-    height: 45vh;
+    height: 58vw;
   }
   .presettemp {
     height: 5vh;
