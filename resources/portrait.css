@@ -17,6 +17,7 @@
 
     background: rgba(40, 40, 40, 0.4);
     box-shadow: 9px 9px 25px #00000046;
+    outline: 1px solid rgb(67, 68, 72);
     padding-top: 1vh;
     padding-bottom: 1vh;
     padding-left: 1vw;

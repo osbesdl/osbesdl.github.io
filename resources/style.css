@@ -104,6 +104,7 @@ body {
   
   background: rgba(40, 42, 45, 0.745);
   box-shadow: 9px 9px 25px #00000046;
+  outline: 1px solid rgb(67, 68, 72);
   padding-top: 4vh;
   padding-bottom: 4vh;
   padding-left: 2vw;
