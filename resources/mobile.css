@@ -32,7 +32,9 @@
   .credit {
     margin-bottom: 30px;
     top: 0px;
+    left: 0px;
     margin-top: 20vh;
+    font-size: 2vh;
   }
   .box {
     font-size: 6vw;
