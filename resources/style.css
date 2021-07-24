@@ -204,12 +204,19 @@ body {
 .credit {
   position: absolute;
   bottom: 5vh;
-  left: 41vw;
+  left: 40vw;
   padding-left: 2vh;
   padding-bottom: 3vh;
   font-size: 1vw;
   text-align: center;
   color: white;
+
+  background: rgb(55, 55, 55);
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  border-radius: 3vw;
 }
 .credit a {
   color: white;
