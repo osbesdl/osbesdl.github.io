@@ -178,18 +178,6 @@ body {
 .download {
   width: 1.6vw;
 }
-.download:hover {
-  animation: filter-animation 2s infinite;
-}
-@keyframes filter-animation {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  
-  100% {
-    filter: hue-rotate(360deg);
-  }
-}
 .download img {
   width: 12vw;
 }
@@ -218,7 +206,7 @@ body {
   font-family: 'Product Sans';
 }
 .egg {
-  cursor: url('egg.png'), auto;	
+  cursor: url('images/egg.png'), auto;	
   position: fixed;
   bottom: 10vh;
   right: 10vw;
