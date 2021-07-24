@@ -106,7 +106,7 @@ body {
   white-space: nowrap;
   
   background: rgba(40, 40, 40, 0.4);
-  box-shadow: 5px 10px 20px #000000;
+  box-shadow: 9px 9px 25px #000000;
   padding-top: 4vh;
   padding-bottom: 4vh;
   padding-left: 2vw;
@@ -115,7 +115,7 @@ body {
   width: 20vw;
   height: 20vw;
   max-height: 40vh;
-  margin-top: 5vh;
+  margin-top: 3vh;
 }
 .boxcontent {
   height: 20vw;
