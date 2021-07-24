@@ -175,17 +175,6 @@ body {
 .hidden {
   display :none;
 }
-/* OLD DOWNLOAD
-.download {
-  background: -webkit-linear-gradient(rgb(255, 72, 0),rgb(193, 23, 184));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  cursor: pointer;
-  font-size: 4vh;
-  font-family: 'Roboto', sans-serif;
-  width: 100%;
-  margin-top:40vh
-} */
 .download {
   width: 1.6vw;
 }
