@@ -55,7 +55,8 @@ document.write("</div>");
 function showHiddenPacks() {
   var hiddendiv = document.getElementById("hidden");
   hiddendiv.style.display = 'block';
-
-  var showhiddendiv = document.getElementById("showhidden");
-  showhiddendiv.style.display = 'none';
+  for (x = 0; x < 2; x++) {
+    var showhiddendiv = document.getElementById("showhidden"+x);
+    showhiddendiv.style.display = 'none';
+  }
 }
