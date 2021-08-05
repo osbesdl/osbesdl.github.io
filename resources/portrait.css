@@ -23,13 +23,17 @@
     padding-left: 1vw;
     padding-right: 7vw;
     border-radius: 3vw;
+
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
   }
   .newline {
     display:contents;
   }
   .links img {
-    width: 12vw;
-    margin-left: 5vw;
+    width: 8vh;
+    margin-left: 3vw;
   }
   .info {
     margin-left: 3vw;
