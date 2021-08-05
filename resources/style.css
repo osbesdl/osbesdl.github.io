@@ -33,6 +33,13 @@ body {
   font-family: 'Product Sans';
   text-align: center;
 }
+pre {
+  font-size: 36px;
+  color: white;
+  font-family: 'Product Sans';
+  text-align: center;
+}
+
 .content {
   padding-bottom: 3vh;
   display: inline-block;  
