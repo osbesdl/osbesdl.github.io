@@ -97,6 +97,7 @@ pre {
 .newline {
   display: block;
 }
+
 .box {
   position: absolute;
   text-align: left;
@@ -120,6 +121,8 @@ pre {
   max-height: 40vh;
   margin-top: 3vh;
 }
+_:-webkit-full-screen-ancestor, :root .box { outline: 0px; }
+
 .boxcontent {
   height: 20vw;
   max-height: 40vh;
