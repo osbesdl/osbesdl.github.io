@@ -1,17 +1,39 @@
 @media (orientation: portrait) {
   .bg {
-    background-size: 200vw;
+    background-size: 175vh;
   }
   .logo img {
 	  padding-top: 7vh;
     height: 12vh;
   }
-  .largelinks {
-	margin-top: 17vh;
-	font-size: 3vh;
+  .presetlinks {
+	  margin-top: 17vh;
+	  font-size: 3vh;
   }
   .links {
-    margin-top: -100px;
+    margin-top: 90vh;
+    margin-left: 10.5vw;
+    width: 70vw;
+
+    background: rgba(40, 40, 40, 0.4);
+    box-shadow: 9px 9px 25px #00000046;
+    outline: 1px solid rgb(67, 68, 72);
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 1vw;
+    padding-right: 7vw;
+    border-radius: 3vw;
+
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+  }
+  .newline {
+    display:contents;
+  }
+  .links img {
+    width: 8vh;
+    margin-left: 3vw;
   }
   .info {
     margin-left: 3vw;
@@ -24,16 +46,23 @@
   .credit {
     margin-bottom: 30px;
     top: 0px;
+    left: 0px;
+    height: 10vh;
     margin-top: 20vh;
+    font-size: 2vh;
   }
-  .packs {
-    margin-left: 17vw;
+  .box {
     font-size: 6vw;
     margin-left: 11.5vw;
     width: 72vw;
+    height: 58vw;
+    max-height: 45vh;
 	  border-radius: 5vh;
     margin-top: 13vh;
     line-height: 2.5;
+  }
+  .boxcontent {
+    height: 58vw;
   }
   .presettemp {
     height: 5vh;
@@ -55,7 +84,7 @@
     height: 4vw;
   }
   .supexp {
-    padding-left: 13vw
+    padding-left: 11vw
   }
   .suplat {
     padding-left: 20.9vw
@@ -66,6 +95,9 @@
   .showhidden {
     font-size: 6vw;
     left: 12vw;
+  }
+  .showhiddenpadding {
+    height: 0px;
   }
   .download {
     width: 6vw;
