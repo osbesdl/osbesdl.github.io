@@ -52,17 +52,18 @@
     font-size: 2vh;
   }
   .box {
-    font-size: 6vw;
+    font-size: min(6vw, 4vh);
     margin-left: 11.5vw;
     width: 72vw;
     height: 58vw;
-    max-height: 45vh;
+    max-height: 35vh;
 	  border-radius: 5vh;
     margin-top: 13vh;
     line-height: 2.5;
   }
   .boxcontent {
     height: 58vw;
+    max-height: 35vh;
   }
   .presettemp {
     height: 5vh;
@@ -76,12 +77,13 @@
 	  border-radius: 5vh;
 	  margin-left: 5vw;
     margin-right: 5vw;
+    font-size: min(5vw, 3.5vh);
   }
   .experimental {
     font-size: 5vw;
   }
   .badgealt {
-    height: 4vw;
+    height: min(4vw, 3vh);
   }
   .supexp {
     padding-left: 11vw
@@ -90,20 +92,17 @@
     padding-left: 20.9vw
   }
   .badge {
-    height: 5vw;
+    height: min(5vw, 3vh);
   }
   .showhidden {
-    font-size: 4vw;
+    font-size: min(4vw, 2.8vh);
     left: 18vw;
   }
   .showhiddenpadding {
     height: 0px;
   }
   .download {
-    width: 6vw;
-  }
-  .supportver {
-    font-size: 5vw;
+    width: min(6vw, 4vh);
   }
   .alphatag {
     font-size: 3vw
