@@ -146,7 +146,8 @@ pre {
 .showhidden {
   position: relative;
   text-align: center;
-  left: 5vw;
+  display: flex;
+  justify-content: center;
   font-size: 1.2vw;
   opacity: 0.5;
 }
