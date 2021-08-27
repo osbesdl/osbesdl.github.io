@@ -1,0 +1,120 @@
+@media (orientation: portrait) {
+  .bg {
+    background-size: 175vh;
+  }
+  .logo img {
+	  padding-top: 7vh;
+    height: 12vh;
+  }
+  .presetlinks {
+	  margin-top: 17vh;
+	  font-size: 3vh;
+  }
+
+  .links {
+    margin-top: 82vh;
+    margin-left: 10.5vw;
+    width: 70vw;
+
+    background: rgba(40, 40, 40, 0.4);
+    box-shadow: 9px 9px 25px #00000046;
+    outline: 1px solid rgb(67, 68, 72);
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 1vw;
+    padding-right: 7vw;
+    border-radius: 3vw;
+
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+  }
+  _:-webkit-full-screen-ancestor, :root .links { outline: 0px; }
+
+  .newline {
+    display:contents;
+  }
+  .links img {
+    width: 8vh;
+    margin-left: 3vw;
+  }
+  .info {
+    margin-left: 3vw;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    font-size: 4vw;
+    border-radius: 10px;
+    background: rgb(30,30,30)
+  }
+  .credit {
+    margin-bottom: 30px;
+    top: 0px;
+    left: 0px;
+    height: 10vh;
+    margin-top: 20vh;
+    font-size: 2vh;
+  }
+  .box {
+    font-size: min(5vw, 4vh);
+    margin-left: 11.5vw;
+    width: 72vw;
+    height: 58vw;
+    max-height: 35vh;
+	  border-radius: 5vh;
+    margin-top: 13vh;
+    line-height: 2.5;
+  }
+  .boxcontent {
+    height: 58vw;
+    max-height: 35vh;
+  }
+  .pack {
+    margin-left: 2.5vw;
+  }
+  .presettemp {
+    height: 5vh;
+    padding-top: 3vh;
+    padding-right: 1vw;
+  }
+  .presetrepo {
+    height: 5vh;
+  }
+  .supportver {
+	  border-radius: 5vh;
+	  margin-left: 5vw;
+    margin-right: 5vw;
+    font-size: min(5vw, 3.5vh);
+  }
+  .experimental {
+    font-size: 5vw;
+  }
+  .badgealt {
+    height: min(4vw, 3vh);
+  }
+  .supexp {
+    padding-left: 11vw
+  }
+  .suplat {
+    padding-left: 20.9vw
+  }
+  .badge {
+    height: min(5vw, 3vh);
+  }
+  .showhidden {
+    font-size: min(4vw, 2.8vh);
+    display: flex;
+    justify-content: center;
+  }
+  .showhiddenpadding {
+    height: 0px;
+  }
+  .download {
+    width: min(6vw, 4vh);
+  }
+  .alphatag {
+    font-size: 3vw
+  }
+  .download img {
+    width: 40vw;
+  }
+}

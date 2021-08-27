@@ -1,6 +1,3 @@
-* {
-  overflow: hidden; /* Hide scrollbars */
-}
 a {
   cursor: pointer;
 }
@@ -24,8 +21,8 @@ a {
 }
 
 body {
-  background: rgb(30, 30, 30);
-  background-image: image("bg.png");
+  overflow: hidden; /* Hide scrollbars */
+  background: rgb(31, 32, 36);
   background-repeat: repeat;
   background-size: cover;
   font-size: 36px;
@@ -53,6 +50,7 @@ pre {
   right: 0;
   bottom: 0;
   top: 0;
+  overflow: hidden;
 }
 .bg {
   top: 0;
@@ -60,7 +58,7 @@ pre {
   left: 0;
   position: absolute;
   padding-bottom: 2vh;
-  background-image: url("bg.png");
+  background-image: url("images/bg.jpg");
   background-size: 100vw;
   height: 100vh;
   background-repeat: no-repeat;
@@ -69,7 +67,7 @@ pre {
   padding-top: 9vh;
   height: 18vh;
 }
-.largelinks {
+.presetlinks {
   font-size: 4vh;
   text-align: right;
   right: 0px;
@@ -80,39 +78,55 @@ pre {
   padding-bottom: 1.6vh;
   margin-top: 5vh;
   font-family: 'Product Sans';
-  position: absolute
+  position: absolute;
 }
 .links {
   font-size: 1.6vh;
   text-align: right;
-  right: 0px;
-  left: 0px;
   top: 0px;
   padding-right: 2vh;
   margin-top: 26vh;
   padding-bottom: 1.6vh;
   position: absolute;
 }
-.packs {
+.links img {
+  padding-top: 1vh;
+  width: 4vw;
+  height: auto;
+}
+.newline {
+  display: block;
+}
+
+.box {
   position: absolute;
   text-align: left;
-  margin-left: 40vw;
-  height: auto;
+  margin-left: 38vw;
   left: 0;
   right: 0;
   font-size: 1.6vw;
   line-height: 1.8;
   white-space: nowrap;
   
-  background: rgb(55, 55, 55);
+  background: rgba(40, 42, 45, 0.745);
+  box-shadow: 9px 9px 25px #00000046;
+  outline: 1px solid rgb(67, 68, 72);
   padding-top: 4vh;
   padding-bottom: 4vh;
   padding-left: 2vw;
   padding-right: 2vw;
   border-radius: 3vw;
-  margin-left: 38vw;
   width: 20vw;
-  margin-top: 10vh;
+  height: 20vw;
+  max-height: 40vh;
+  margin-top: 3vh;
+}
+_:-webkit-full-screen-ancestor, :root .box { outline: 0px; }
+
+.boxcontent {
+  height: 20vw;
+  max-height: 40vh;
+  overflow-y: scroll;
 }
 .experimental {
   font-size: 1.2vw;
@@ -123,7 +137,7 @@ pre {
   
 }
 .supexp {
-  padding-left: 5.0vw
+  padding-left: 4.5vw
 }
 .suplat {
   padding-left: 7.2vw
@@ -135,8 +149,13 @@ pre {
 .showhidden {
   position: relative;
   text-align: center;
-  left: 5vw;
+  display: flex;
+  justify-content: center;
   font-size: 1.2vw;
+  opacity: 0.5;
+}
+.showhiddenpadding {
+  height: 10vh;
 }
 .presettemp {
   height: 8vh;
@@ -148,7 +167,7 @@ pre {
 }
 .supportver {
   padding-left: 0px;
-  background: rgb(37, 37, 37);
+  background: rgba(23, 24, 26, 0.745);
   border-radius: 2vw;
   font-size: 1.45vw;
 }
@@ -164,49 +183,27 @@ pre {
 .hidden {
   display :none;
 }
-/* OLD DOWNLOAD
-.download {
-  background: -webkit-linear-gradient(rgb(255, 72, 0),rgb(193, 23, 184));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  cursor: pointer;
-  font-size: 4vh;
-  font-family: 'Roboto', sans-serif;
-  width: 100%;
-  margin-top:40vh
-} */
 .download {
   width: 1.6vw;
-}
-.download:hover {
-  animation: filter-animation 2s infinite;
-}
-@keyframes filter-animation {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  
-  100% {
-    filter: hue-rotate(360deg);
-  }
 }
 .download img {
   width: 12vw;
 }
 .credit {
   position: absolute;
-  left: 0px;
-  bottom: 0px;
+  bottom: 5vh;
+  left: 44vw;
   padding-left: 2vh;
-  padding-bottom: 2vh;
-  font-size: 1.5vh;
-  text-align: left;
+  padding-bottom: 3vh;
+  font-size: 1vw;
+  text-align: center;
   color: white;
+  opacity: 0.2;
 }
 .credit a {
   color: white;
 }
-.packs a {
+.boxcontent a {
   color: white;
   text-decoration: none;
 }
@@ -217,7 +214,7 @@ pre {
   font-family: 'Product Sans';
 }
 .egg {
-  cursor: url('egg.png'), auto;	
+  cursor: url('images/egg.png'), auto;	
   position: fixed;
   bottom: 10vh;
   right: 10vw;
