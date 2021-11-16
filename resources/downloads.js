@@ -21,7 +21,7 @@ function pack(version, badge, customurl) {
 
 // Pack definitions
 pack("Alpha", "experimental")
-pack("0.14.0", "latest", "about:blank");
+pack("0.14.0", "latest", "/downloads/0.14.0.html");
 
 document.write("<div class='hidden' id='hidden'>");
 pack("0.13.2", "none", "https://github.com/jebbyk/OSBES-minecraft-bedrock-edition-shader/releases/download/0.13.2/OSBES-v0.13.2.mcpack");
