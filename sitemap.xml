@@ -3,10 +3,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
    <url>
-      <loc>https://osbesdl.github.io/</loc>
+      <loc>https://osbesdl.github.io/index.html</loc>
    </url>
    <url>
-      <loc>https://osbesdl.github.io/credits/</loc>
+      <loc>https://osbesdl.github.io/credits/index.html</loc>
+   </url>
+   <url>
+      <loc>https://osbesdl.github.io/downloads/0.14.0.html</loc>
+   </url>
+   <url>
+      <loc>https://osbesdl.github.io/downloads/0.15.0.html</loc>
    </url>
 
 </urlset> 
