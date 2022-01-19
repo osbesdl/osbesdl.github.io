@@ -31,7 +31,7 @@
   }
   _:-webkit-full-screen-ancestor, :root .links { outline: 0px; }
 
-  .newline {
+  .externallinks {
     display:contents;
   }
   .links img {
